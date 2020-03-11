@@ -31,7 +31,7 @@ export default class Container extends Component {
   handleMode = (e) => {
     console.log('clicked')
     let { isLight } = this.state 
-   
+
     if (isLight) {
       this.setState({
         isLight: false
@@ -45,14 +45,13 @@ export default class Container extends Component {
   }
 
   render() {
-
     const { user, items, isLight } = this.state
     const { handleMode } = this
     return (
       <>
         <Header user={user} />
-        <button onClick={handleMode} id ="toggleButton">{isLight ? "Dark" : "Light"} Mode</button>
         <main className="container">
+        <button onClick={handleMode} id ="toggleButton">{isLight ? "Dark" : "Light"} Mode</button>
           <Routes
             items={items}
             user={user}
