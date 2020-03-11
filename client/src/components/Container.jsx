@@ -1,34 +1,37 @@
-import React, { Component } from 'react'
-import { getItems } from '../services/items'
-import Routes from '../routes'
-import Header from '../screens/Header'
+import React, { Component } from "react";
+import { getItems } from "../services/items";
+import Routes from "../routes";
+import Header from "../screens/Header";
+import { AZ, ZA, lowestFirst, highestFirst } from "./Sort";
 
 export default class Container extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       user: null,
       items: []
-    }
+    };
   }
 
   async componentDidMount() {
     try {
-      const items = await getItems()
-      this.setState({ items })
+      const items = await getItems();
+      this.setState({ items });
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
   }
 
-  addItem = item => this.setState({ items: [...this.state.items, item] })
+  addItem = item => this.setState({ items: [...this.state.items, item] });
 
-  setUser = user => this.setState({ user })
+  setUser = user => this.setState({ user });
 
-  clearUser = () => this.setState({ user: null })
+  clearUser = () => this.setState({ user: null });
 
-  render(){
-    const { user, items } = this.state
+  render() {
+    const { user, items } = this.state;
+    lowestFirst(items);
+
     return (
       <>
         <Header user={user} />
@@ -42,6 +45,6 @@ export default class Container extends Component {
           />
         </main>
       </>
-    )
+    );
   }
 }

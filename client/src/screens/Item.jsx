@@ -1,49 +1,49 @@
-import React, { Component } from 'react'
-import { Link, Redirect } from 'react-router-dom'
-import Layout from '../components/shared/Layout'
-import { getItemById, deleteItem } from '../services/items'
+import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
+import Layout from "../components/shared/Layout";
+import { getItemById, deleteItem } from "../services/items";
 
 class Item extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       item: null,
       deleted: false
-    }
+    };
   }
 
   async componentDidMount() {
     try {
-      const item = await getItemById(this.props.match.params.id)
-      this.setState({ item })
+      const item = await getItemById(this.props.match.params.id);
+      this.setState({ item });
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
   }
 
   destroy = () => {
     deleteItem(this.state.item._id)
       .then(() => this.setState({ deleted: true }))
-      .catch(console.error)
-  }
+      .catch(console.error);
+  };
 
   render() {
-    const { item, deleted } = this.state
+    const { item, deleted } = this.state;
 
     if (!item) {
-      return <p>Loading...</p>
+      return <p>Loading...</p>;
     }
 
     if (deleted) {
       return (
         <Redirect
           to={{
-            pathname: '/items',
-            state: { msg: 'Item succesfully deleted!' }
+            pathname: "/items",
+            state: { msg: "Item succesfully deleted!" }
           }}
         />
-      )
+      );
     }
 
     return (
@@ -57,7 +57,7 @@ class Item extends Component {
           <div className="buttons">
             <button className="danger" onClick={this.destroy}>
               Delete Item
-                        </button>
+            </button>
             <button
               className="edit"
               onClick={() =>
@@ -67,12 +67,12 @@ class Item extends Component {
               }
             >
               Edit
-                        </button>
+            </button>
           </div>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
-export default Item
+export default Item;
