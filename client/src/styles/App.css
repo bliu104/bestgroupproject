@@ -7,6 +7,17 @@ body {
   height: 100%;
 }
 
+.light {
+  background-color:#F8F8F8;
+}
+.dark {
+  background-color:#333;
+  color:whitesmoke;
+}
+
+#toggleButton {
+  float:right;
+}
 button {
   cursor: pointer;
   font-size: 1rem;
