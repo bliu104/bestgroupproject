@@ -13,6 +13,7 @@ class ItemCreate extends Component {
         title: '',
         image_url: '',
         description: '',
+        condition: '',
         price: '',
         color: ''
       },

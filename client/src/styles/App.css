@@ -4,7 +4,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat';
-  overflow: hidden;
   height: 100%;
 }
 
@@ -15,6 +14,7 @@ button {
   border-radius: 3px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  display: flex;
 }
 
 .navbar {
@@ -128,12 +128,12 @@ button {
   height: Calc(100vh - 4em);
 }
 
-.layout .content {
+/* .layout .content {
   display: flex;
   flex-direction: row;
   position: relative;
   flex: 1;
-}
+} */
 
 .layout .content nav {
   display: flex;
@@ -190,18 +190,50 @@ button {
   padding: 2em 0;
 }
 
+.item-detail-container{
+  display: flex;
+  flex-direction: row;
+
+  padding: 1em;
+}
+
+.image-container{
+  align-content: center;
+  width: 50%;
+  height: 100%;
+  margin: auto 0;
+}
+
+.item-detail-image{
+  width: auto;
+  height: 40vh;
+  padding: 1em;
+}
+
+.bold{
+  font-weight: 800;
+}
+
 .item {
   border: 2px solid #81b9bf;
   text-align: center;
-  padding: 1em;
   border-radius: 3px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  min-width: 300px;
+  align-items: center;
+  padding: .5em;
+  width: 20vw;
+  height: 50vh;
+  justify-content: space-between;
 }
 
-.item .buttons {
+.item-image{
+  width: auto;
+  height: 50%;
+}
+
+.item{
   margin-top: 1em;
   display: flex;
   justify-content: space-around;
@@ -247,6 +279,14 @@ button {
 
 .danger {
   background: #e57373;
+  margin: 0 2vw;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: flex-end;
 }
 
 .error {
@@ -257,6 +297,7 @@ button {
 
 .edit {
   background: #b2dfdb;
+  margin: 0 2vw;
 }
 
 .edit:hover {

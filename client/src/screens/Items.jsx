@@ -1,34 +1,35 @@
-import React from 'react'
-import Layout from '../components/shared/Layout'
+import React from "react";
+import Layout from "../components/shared/Layout";
 
 export default function Items(props) {
-  const { history, match, user, items } = props
+  const { history, match, user, items } = props;
   const renderButton = id => {
     if (user) {
       return (
         <button onClick={() => history.push(`${match.url}/${id}`)}>
           See More
         </button>
-      )
+      );
     } else {
-      return null
+      return null;
     }
-  }
+  };
 
   const renderItems = () => {
     if (items) {
       return items.map(item => {
         return (
           <div className="item" key={item._id}>
-            <h4>{item.title}</h4>
+            <img src={item.image_url} className="item-image"></img>
+            <h5>{item.title}</h5>
             {renderButton(item._id)}
           </div>
-        )
-      })
+        );
+      });
     } else {
-      return null
+      return null;
     }
-  }
+  };
 
   if (user) {
     return (
@@ -37,7 +38,7 @@ export default function Items(props) {
         {!items ? <h3>No Items at this time.</h3> : null}
         <div className="item-container">{renderItems()}</div>
       </Layout>
-    )
+    );
   } else {
     return (
       <div className="landing">
@@ -47,6 +48,6 @@ export default function Items(props) {
           <div className="item-container">{renderItems()}</div>
         </div>
       </div>
-    )
+    );
   }
 }
