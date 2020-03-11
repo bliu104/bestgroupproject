@@ -8,7 +8,8 @@ export default class Container extends Component {
     super(props)
     this.state = {
       user: null,
-      items: []
+      items: [],
+      isLight: true
     }
   }
 
@@ -27,11 +28,30 @@ export default class Container extends Component {
 
   clearUser = () => this.setState({ user: null })
 
-  render(){
-    const { user, items } = this.state
+  handleMode = (e) => {
+    console.log('clicked')
+    let { isLight } = this.state 
+   
+    if (isLight) {
+      this.setState({
+        isLight: false
+      })
+      e.target.parentElement.parentElement.className = "dark"
+    }
+    else {
+      this.setState({ isLight: true })
+      e.target.parentElement.parentElement.className = "light"
+    }
+  }
+
+  render() {
+
+    const { user, items, isLight } = this.state
+    const { handleMode } = this
     return (
       <>
         <Header user={user} />
+        <button onClick={handleMode} id ="toggleButton">{isLight ? "Dark" : "Light"} Mode</button>
         <main className="container">
           <Routes
             items={items}
