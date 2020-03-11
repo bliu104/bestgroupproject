@@ -48,26 +48,31 @@ class Item extends Component {
 
     return (
       <Layout>
-        <div className="item">
-          <Link to="/items">
-            <span> Back to all items</span>
-          </Link>
-          <h4>{item.title}</h4>
-          <p>{item.image_url}</p>
-          <div className="buttons">
-            <button className="danger" onClick={this.destroy}>
-              Delete Item
-                        </button>
-            <button
-              className="edit"
-              onClick={() =>
-                this.props.history.push(
-                  `/items/${this.props.match.params.id}/edit`
-                )
-              }
-            >
-              Edit
-                        </button>
+        <div className="item-detail-container">
+          <div className='image-container'>
+            <Link to="/items">
+              <span> Back to all items</span>
+            </Link>
+            <img src={item.image_url} className='item-detail-image'></img>
+          </div>
+          <div className='item-property container'>
+            <h2>{item.title}</h2>
+            <p><span className='bold'>Item Description: </span> {item.description}</p>
+            <p><span className='bold'>Condition: </span> {item.condition}</p>
+            <p><span className='bold'>Item Color: </span> {item.color}</p>
+            <p><span className='bold'>Price: </span> ${item.price}</p>
+            <div className="button-container">
+              <button className="danger" onClick={this.destroy}>
+                Delete Item
+            </button>
+              <button
+                className="edit"
+                onClick={() =>
+                  this.props.history.push(
+                    `/items/${this.props.match.params.id}/edit`)}>
+                Edit
+            </button>
+            </div>
           </div>
         </div>
       </Layout>

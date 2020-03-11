@@ -20,7 +20,8 @@ export default function Items(props) {
       return items.map(item => {
         return (
           <div className="item" key={item._id}>
-            <h4>{item.title}</h4>
+            <img src={item.image_url} className='item-image'></img>
+            <h5>{item.title}</h5>
             {renderButton(item._id)}
           </div>
         )

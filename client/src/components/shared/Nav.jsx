@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom'
 
 const Nav = () => (
   <nav>
-    <NavLink to='/items'>Items</NavLink>
-    <NavLink to='/create'>Create Item</NavLink>
+    {/* <NavLink to='/items'>Items</NavLink>
+    <NavLink to='/create'>Create Item</NavLink> */}
   </nav>
 )
 
