@@ -35,7 +35,9 @@ const Routes = ({ user, items, setUser, clearUser, addItem }) => (
             path="/items"
             user={user}
             render={props => <Items {...props} user={user} items={items} />}
-        />
+    />
+    
+     
         <AuthenticatedRoute
             exact
             path="/items/:id"
