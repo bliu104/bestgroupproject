@@ -9,8 +9,9 @@ import Item from '../screens/Item'
 import Items from '../screens/Items'
 import ItemCreate from '../screens/ItemCreate'
 import ItemEdit from '../screens/ItemEdit'
+import ContactUs from '../components/shared/ContactUs'
 import AuthenticatedRoute from './AuthenticatedRoute'
-const Routes = ({ user, items, setUser, clearUser, addItem }) => (
+const Routes = ({ user, items, setUser, clearUser, addItem , contactUs}) => (
     <Switch>
         <Route
             exact
@@ -30,14 +31,17 @@ const Routes = ({ user, items, setUser, clearUser, addItem }) => (
             path="/sign-out"
             render={props => <SignOut {...props} clearUser={clearUser} user={user} />}
         />
+        <Route
+            exact
+            path="/ContactUs"
+            render={props => <ContactUs {...props}  />}
+        />
         <AuthenticatedRoute
             exact
             path="/items"
             user={user}
             render={props => <Items {...props} user={user} items={items} />}
-    />
-    
-     
+    />   
         <AuthenticatedRoute
             exact
             path="/items/:id"
