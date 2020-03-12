@@ -1,5 +1,6 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
+import Home from '../../screens/Home';
 // import './../../ContactUs.css'
 
     export default function ContactUs() {
@@ -7,7 +8,7 @@ import emailjs from 'emailjs-com';
     function sendEmail(e) {
     e.preventDefault();
 
-    emailjs.sendForm('gmail', 'template_pT0BxZ9f', e.target, 'user_7LuaEMf9xC2IbOOC8DkLv')
+    emailjs.sendForm('gmail', 'template_pT0BxZ9f', e.target, 'user_7LuaEMf9xC2IbOOC8DkLv', alert(`Thank You,Your Email Has Been Submitted`) )
         .then((result) => {
             console.log(result.text);
         }, (error) => {
@@ -24,7 +25,7 @@ import emailjs from 'emailjs-com';
         <input type="email" name="user_email" /><br/>
         <label>Message</label><br/>
         <textarea name="message" /><br/>
-        <input type="submit" value="Send" /><br/>
+        <input type="submit" value="Send" onSubmit="show alert()" /><br/>
     </form>
     );
     }
