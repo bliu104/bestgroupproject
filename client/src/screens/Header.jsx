@@ -4,6 +4,7 @@ import Navbar from '../components/shared/Navbar.jsx'
 
 const authenticatedOptions = (
   <div className="links">
+    <NavLink to="/">Home</NavLink>
     <NavLink to='/items'>Items</NavLink>
     <NavLink to='/create'>Create Item</NavLink>
     <NavLink to="/change-password">Change Password</NavLink>
@@ -13,22 +14,23 @@ const authenticatedOptions = (
 
 const unauthenticatedOptions = (
   <div className="links">
+    <NavLink to="/">Home</NavLink>
     <NavLink to="/sign-up">Sign Up</NavLink>
     <NavLink to="/sign-in">Sign In</NavLink>
   </div>
 )
 
-const alwaysOptions = (
-  <div className="links">
-    <NavLink to="/">Home</NavLink>
-  </div>
-)
+// const alwaysOptions = (
+//   <div className="links">
+//     <NavLink to="/">Home</NavLink>
+//   </div>
+// )
 
 const Header = ({ user }) => (
   <Navbar>
-    {user && <span className="navbar-text">Welcome, {user.username}</span>}
+    {user && <span className="navbar-text">Welcome, {user.username} </span>}
     <div className="nav">
-      {alwaysOptions}
+      {/* {alwaysOptions} */}
       {user ? authenticatedOptions : unauthenticatedOptions}
     </div>
   </Navbar>

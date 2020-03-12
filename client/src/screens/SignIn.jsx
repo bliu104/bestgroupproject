@@ -60,7 +60,7 @@ class SignIn extends Component {
       <div className="row">
         <div className="form-container">
           <h3>Sign In</h3>
-          <form onSubmit={this.onSignIn} className='input-container'>
+          <form onSubmit={this.onSignIn}>
             <label>Username</label>
             <input
               required

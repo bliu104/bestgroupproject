@@ -3,6 +3,7 @@ import Layout from '../components/shared/Layout'
 
 export default function Items(props) {
   const { history, match, user, items } = props
+
   const renderButton = id => {
     if (user) {
       return (
@@ -20,9 +21,13 @@ export default function Items(props) {
       return items.map(item => {
         return (
           <div className="item" key={item._id}>
-            <img src={item.image_url} className='item-image'></img>
-            <h5>{item.title}</h5>
-            {renderButton(item._id)}
+            <div className='sub-item-container'>
+              <img src={item.image_url} className='item-image'></img>
+            </div>
+            <div className='sub-item-container2'>
+              <h5>{item.title}</h5>
+              {renderButton(item._id)}
+            </div>
           </div>
         )
       })

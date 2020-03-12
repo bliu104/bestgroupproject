@@ -57,7 +57,7 @@ class Item extends Component {
           </div>
           <div className='item-property container'>
             <h2>{item.title}</h2>
-            <p><span className='bold'>Item Description: </span> {item.description}</p>
+            <p className='text-fade'><span className='bold'>Item Description: </span> {item.description}</p>
             <p><span className='bold'>Condition: </span> {item.condition}</p>
             <p><span className='bold'>Item Color: </span> {item.color}</p>
             <p><span className='bold'>Price: </span> ${item.price}</p>

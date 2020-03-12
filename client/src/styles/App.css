@@ -11,13 +11,48 @@ body {
   background-color:rgb(255, 255, 255);
 }
 .dark {
-  background-color:#333;
-  color:rgb(255, 255, 255);
+  background-color: #262626;
+  color:#e0e0e0;
 }
 
-/* #toggleButton {
-  float:right;
-} */
+.dark .item, .dark .navbar, .dark .form-container,.dark .layout footer{
+  box-shadow:2px 2px 5px black;
+  background-color:#1D1D1D;
+  border:none;
+}
+.dark input {
+  background-color: #e1e1e1;
+}
+
+.dark .item-container .item button,.dark .danger {
+  background-color: #BB86FC;
+  border:none;
+  color:#1D1D1D;
+}
+
+.sub-item-container, .sub-item-container2{
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 100%;
+
+}
+
+.sub-item-container{
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.sub-item-container2{
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#toggleButton {
+  margin:10px;
+  border:2px solid #616161;
+}
 
 button {
   cursor: pointer;
@@ -36,14 +71,6 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* transform: skewY(-6deg); 
-  transform-origin: top left;
-    clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 100%,
-    0 calc(100% - 4vw)
-  ); */
 }
 
 .navbar .nav .links a,
@@ -68,19 +95,20 @@ button {
   height: 100%;
 }
 
-.row {
+/* .row {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 3em;
-}
+} */
+
 .form-container {
   align-self: center;
   padding: 1em;
   width: 50%;
   height: 80%;
   margin: 4em auto;
-  border: 2px solid #9b9b9b;
+  border: 2px solid whitesmoke;
   border-radius: 6px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 2s ease;
@@ -115,11 +143,11 @@ button {
 
 .form-container form input:focus,
 .form-container form input:active {
-  border: 2px solid #82ada9;
+  border: 2px solid #e0e0e0;
 }
 
 .form-container form input:valid {
-  border: 2px solid #66bb6a;
+  border: 2px solid #e0e0e0;
 }
 
 .form-container form button {
@@ -213,7 +241,8 @@ button {
 .item-detail-container{
   display: flex;
   flex-direction: row;
-  padding: 1em;
+  margin: 1em;
+  width: 100%;
 }
 
 .image-container{
@@ -228,7 +257,10 @@ button {
 .item-detail-image{
   width: auto;
   height: 40vh;
-  padding: 1em;
+}
+
+.text-fade{
+
 }
 
 .bold{
@@ -236,7 +268,6 @@ button {
 }
 
 .item {
-  border: 2px solid #9b9b9b;
   text-align: center;
   border-radius: 3px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
@@ -250,8 +281,10 @@ button {
 }
 
 .item-image{
-  width: auto;
-  height: 50%;
+  width: 100%;
+  height: auto;
+  border-radius: 5%;
+  
 }
 
 .item{
@@ -286,6 +319,7 @@ button {
 .item-container .item {
   min-width: 200px;
   min-height: 100px;
+  align-self: center;
 }
 
 .item-container .item button {
@@ -306,8 +340,7 @@ button {
 .button-container{
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  align-content: flex-end;
+  justify-content: space-around;
 }
 
 .error {
@@ -319,10 +352,13 @@ button {
 .edit {
   background: #b2dfdb;
   margin: 0 2vw;
+  border:none;
 }
 
 .edit:hover {
   background: #82ada9;
+  color:white;
+  border:none;
 }
 
 .danger:hover {
@@ -416,9 +452,10 @@ button {
   }
 
   .item-container .item{
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     width: 85vw;
-    height: 20vh;
+    height: auto;
     overflow: hidden;
     align-self: center;
   }
@@ -426,11 +463,12 @@ button {
   .item-image{
     width: 30vw;
     height: auto;
+    margin: auto;
   }
 
   .form-container{
     width: 80%;
-    height: 50%;
+    height: auto;
   }
 
   .form-container form{
@@ -439,7 +477,7 @@ button {
   }
 
   .form-container form input{
-    width: 90%;
+    width: 80%;
   }
 
   .layout .content .item-container{
@@ -454,5 +492,16 @@ button {
   .links{
     display: flex;
     flex-direction: column;
+    font-size: .8em;
   }
+
+  .item-detail-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-detail-image{
+    margin: auto 0;
+  }
+
 }
