@@ -27,9 +27,15 @@ export const ZA = array => {
 };
 
 export const lowestFirst = array => {
-  console.log(array.sort(dynamicSort("price")));
+  array.sort(function(a, b) {
+    return parseFloat(a.price) - parseFloat(b.price);
+  });
 };
 
 export const highestFirst = array => {
-  array.sort(dynamicSort("price"));
+  array
+    .sort(function(a, b) {
+      return parseFloat(a.price) - parseFloat(b.price);
+    })
+    .reverse();
 };
