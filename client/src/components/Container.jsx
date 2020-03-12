@@ -79,10 +79,12 @@ export default class Container extends Component {
       this.setState({
         isLight: false
       });
-      e.target.parentElement.parentElement.className = "dark";
+      e.target.className = e.target.parentElement.parentElement.className =
+        "dark";
     } else {
       this.setState({ isLight: true });
-      e.target.parentElement.parentElement.className = "light";
+      e.target.className = e.target.parentElement.parentElement.className =
+        "light";
     }
   };
 
