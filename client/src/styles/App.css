@@ -259,10 +259,6 @@ button {
   height: 40vh;
 }
 
-.text-fade{
-
-}
-
 .bold{
   font-weight: 800;
 }
@@ -284,7 +280,7 @@ button {
   width: 100%;
   height: auto;
   border-radius: 5%;
-  
+
 }
 
 .item{
