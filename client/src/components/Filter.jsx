@@ -30,11 +30,6 @@ export const searchByPrice = (array, price) => {
   return arrayPrice;
 };
 
-// export const uniquePrice = () => {
-//   let arrayPrice = [25, 50, 100, 200];
-//   return arrayPrice;
-// };
-
 export const uniqueColor = array => {
   let arrayColor = [];
   array.map(items => {
