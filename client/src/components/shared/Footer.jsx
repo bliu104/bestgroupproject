@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 
 
-const Footer = () => (
+const Footer = (props) => (
   <footer>
     <div><Link to="/ContactUs">Contact US </Link></div>
     
