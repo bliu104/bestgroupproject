@@ -36,6 +36,15 @@ const ItemForm = ({
           onChange={handleChange}
         />
 
+        <label>Condition</label>
+        <input
+          placeholder='New, slightly used, used, or needs repair'
+          value={item.condition}
+          name='condition'
+          required
+          onChange={handleChange}
+        />
+
         <label>Price</label>
         <input
           placeholder='$150.00'
