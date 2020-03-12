@@ -8,12 +8,11 @@ body {
 }
 
 .light {
-  background-color:#F8F8F8;
+  background-color:rgb(255, 255, 255);
 }
 .dark {
   background-color: #262626;
   color:#e0e0e0;
-
 }
 
 .dark .item, .dark .navbar, .dark .form-container,.dark .layout footer{
@@ -29,14 +28,32 @@ body {
   background-color: #BB86FC;
   border:none;
   color:#1D1D1D;
+}
+
+.sub-item-container, .sub-item-container2{
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 100%;
 
 }
- 
+
+.sub-item-container{
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.sub-item-container2{
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
 #toggleButton {
   margin:10px;
   border:2px solid #616161;
 }
+
 button {
   cursor: pointer;
   font-size: 1rem;
@@ -48,8 +65,8 @@ button {
 }
 
 .navbar {
-  background: #0097a7;
-  height: 4em;
+  background: #00043f;
+  height: 10vh;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
@@ -78,12 +95,13 @@ button {
   height: 100%;
 }
 
-.row {
+/* .row {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 3em;
-}
+} */
+
 .form-container {
   align-self: center;
   padding: 1em;
@@ -211,7 +229,7 @@ button {
   text-align: center;
 }
 
-.layout .content .main .item-container {
+.layout .content .item-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2em;
@@ -223,8 +241,8 @@ button {
 .item-detail-container{
   display: flex;
   flex-direction: row;
-
-  padding: 1em;
+  margin: 1em;
+  width: 100%;
 }
 
 .image-container{
@@ -232,12 +250,13 @@ button {
   width: 50%;
   height: 100%;
   margin: auto 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .item-detail-image{
   width: auto;
   height: 40vh;
-  padding: 1em;
 }
 
 .bold{
@@ -245,7 +264,6 @@ button {
 }
 
 .item {
- 
   text-align: center;
   border-radius: 3px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
@@ -259,8 +277,10 @@ button {
 }
 
 .item-image{
-  width: auto;
-  height: 50%;
+  width: 100%;
+  height: auto;
+  border-radius: 5%;
+
 }
 
 .item{
@@ -295,10 +315,11 @@ button {
 .item-container .item {
   min-width: 200px;
   min-height: 100px;
+  align-self: center;
 }
 
 .item-container .item button {
-  background: #0097a7;
+  background: #8b8b8b;
   color: #f8f8f8;
 }
 
@@ -315,8 +336,7 @@ button {
 .button-container{
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  align-content: flex-end;
+  justify-content: space-around;
 }
 
 .error {
@@ -401,11 +421,83 @@ button {
   text-align: center;
 }
 
-.landing .main .item-container {
+.landing .item-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2em;
   grid-template-rows: auto;
   width: 80%;
   margin: 4em auto;
+}
+
+@media only screen and (max-width: 411px){
+  .landing .item-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+  }
+
+  body .item-container {
+  margin: auto 0;
+  justify-content: center;
+  }
+
+  .landing{
+    text-align: center;
+  }
+
+  .item-container .item{
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+    height: auto;
+    overflow: hidden;
+    align-self: center;
+  }
+
+  .item-image{
+    width: 30vw;
+    height: auto;
+    margin: auto;
+  }
+
+  .form-container{
+    width: 80%;
+    height: auto;
+  }
+
+  .form-container form{
+    margin: 0;
+    width: 100%;
+  }
+
+  .form-container form input{
+    width: 80%;
+  }
+
+  .layout .content .item-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar .nav .links a, .navbar span{
+    font-size: 1em;
+  }
+
+  .links{
+    display: flex;
+    flex-direction: column;
+    font-size: .8em;
+  }
+
+  .item-detail-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-detail-image{
+    margin: auto 0;
+  }
+
 }
