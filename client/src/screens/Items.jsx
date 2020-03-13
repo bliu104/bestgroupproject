@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/shared/Layout";
+import Filters from "./Filters";
 
 export default function Items(props) {
   const { history, match, user, items } = props;
@@ -39,6 +40,7 @@ export default function Items(props) {
     return (
       <Layout>
         <h4>Items</h4>
+        <Filters {...props}/>
         {!items ? <h3>No Items at this time.</h3> : null}
         <div className="item-container">{renderItems()}</div>
       </Layout>

@@ -26,14 +26,8 @@ export const searchByPrice = (array, price) => {
       arrayPrice.push(item);
     }
   });
-
   return arrayPrice;
 };
-
-// export const uniquePrice = () => {
-//   let arrayPrice = [25, 50, 100, 200];
-//   return arrayPrice;
-// };
 
 export const uniqueColor = array => {
   let arrayColor = [];

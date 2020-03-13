@@ -48,12 +48,14 @@ class Item extends Component {
 
     return (
       <Layout>
+        <Link to="/items">
+          <span> Back to all items</span>
+        </Link>
         <div className="item-detail-container">
           <div className="image-container">
-            <Link to="/items">
-              <span> Back to all items</span>
-            </Link>
-            <img src={item.image_url} className="item-detail-image"></img>
+            <div className='center'>
+              <img src={item.image_url} className="item-detail-image"></img>
+            </div>
           </div>
           <div className="item-property container">
             <h2>{item.title}</h2>
@@ -78,12 +80,7 @@ class Item extends Component {
                 className="edit"
                 onClick={() =>
                   this.props.history.push(
-                    `/items/${this.props.match.params.id}/edit`
-                  )
-                }
-              >
-                Edit
-              </button>
+                    `/items/${this.props.match.params.id}/edit`)}> Edit </button>
             </div>
           </div>
         </div>

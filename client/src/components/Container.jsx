@@ -3,6 +3,8 @@ import { getItems } from "../services/items";
 import Routes from "../routes";
 import Header from "../screens/Header";
 import { AZ, ZA, lowestFirst, highestFirst } from "./Sort";
+import { verifyToken } from '../services/auth'
+
 import {
   searchByColor,
   uniqueColor,
@@ -12,6 +14,8 @@ import {
 } from "./Filter";
 
 import { set } from "mongoose";
+import { Route } from "react-router-dom";
+import Items from '../screens/Items'
 
 export default class Container extends Component {
   constructor(props) {
@@ -31,15 +35,16 @@ export default class Container extends Component {
   }
 
   async componentDidMount() {
-    try {
-      const items = await getItems();
-      this.setState({ items });
-      this.setState({ itemsReset: items });
-      // items.map(items => {
-      //   console.log(items.price);
-      // });
-    } catch (err) {
-      console.error(err);
+    const user = await verifyToken();
+    if (user) {
+      try {
+        const items = await getItems();
+        this.setState({ items });
+        this.setState({ itemsReset: items });
+      }
+      catch (error) {
+        alert("error")
+      }
     }
   }
 
@@ -72,9 +77,7 @@ export default class Container extends Component {
   };
 
   handleMode = e => {
-    console.log("clicked");
     let { isLight } = this.state;
-
     if (isLight) {
       this.setState({
         isLight: false
@@ -120,7 +123,8 @@ export default class Container extends Component {
         this.setState({ items: newArray });
         break;
       case "Reset":
-        this.setState({ items: this.state.itemsReset });
+        const items = this.state.itemsReset
+        this.setState({ items });
     }
   };
 
@@ -132,13 +136,13 @@ export default class Container extends Component {
         this.setState({ items: newArray });
         break;
       case "Reset":
-        this.setState({ items: this.state.itemsReset });
+        const items = this.state.itemsReset
+        this.setState({ items });
     }
   };
 
   changePrice = event => {
     const buttonInput = parseInt(event.target.className);
-    console.log(buttonInput);
 
     if (buttonInput <= 25) {
       const newArray = searchByPrice(this.state.items, buttonInput);
@@ -196,12 +200,33 @@ export default class Container extends Component {
   };
 
   render() {
-    const { user, items, isLight } = this.state;
-    const { handleMode } = this;
+    const {
+      user,
+      items,
+      isLight,
+      isHiddenColor,
+      isHiddenCondition,
+      value,
+      isHiddenPrice,
+      } = this.state;
+
+    const {
+      handleMode,
+      toggleHiddenColor,
+      createFilterColor,
+      toggleHiddenCondition,
+      createFilterPrice,
+      toggleHiddenFilter,
+      handleSubmit,
+      handleChange,
+      toggleHiddenPrice,
+      changeColor,
+      changeCondition,
+      createFilterCondition } = this
 
     return (
       <>
-        <button onClick={this.toggleHiddenFilter}>Filter</button>
+        {/* <button onClick={this.toggleHiddenFilter}>Filter</button>
         {!this.state.isHiddenFilter && (
           <>
             <button onClick={this.toggleHiddenColor}>Color</button>
@@ -211,32 +236,39 @@ export default class Container extends Component {
             <button onClick={this.toggleHiddenPrice}>Price</button>
             {!this.state.isHiddenPrice && this.createFilterPrice()}
           </>
-        )}
-        <button onClick={this.changeColor}>Reset</button>
+        )} */}
+        {/* <button onClick={this.changeColor}>Reset</button> */}
 
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Sort
-            <select value={this.state.value} onChange={this.handleChange}>
-              <option value="AZ">A to Z</option>
-              <option value="ZA">Z to A</option>
-              <option value="highestFirst">High to Lowest</option>
-              <option value="lowestFirst">Lowest to Highest</option>
-            </select>
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+        {/* <form onSubmit={this.handleSubmit}>
+        </form> */}
         <Header user={user} />
-        <button onClick={handleMode} id="toggleButton">
+        {/* <button onClick={handleMode} id="toggleButton">
           {isLight ? "Dark" : "Light"} Mode
-        </button>
-        <main className="container">
+        </button> */}
+        <main className="container-not-bootstrap">
           <Routes
             items={items}
             user={user}
             setUser={this.setUser}
             addItem={this.addItem}
             clearUser={this.clearUser}
+            toggleHiddenCondition={toggleHiddenCondition}
+            isHiddenCondition={isHiddenCondition}
+            createFilterCondition={createFilterCondition}
+            createFilterColor={createFilterColor}
+            toggleHiddenColor={toggleHiddenColor}
+            toggleHiddenPrice={toggleHiddenPrice}
+            createFilterPrice={createFilterPrice}
+            toggleHiddenFilter={toggleHiddenFilter}
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
+            isHiddenColor={isHiddenColor}
+            value={value}
+            isHiddenPrice={isHiddenPrice}
+            changeColor={changeColor}
+            changeCondition={changeCondition}
+            handleMode={handleMode}
+            isLight={isLight}
           />
         </main>
       </>
