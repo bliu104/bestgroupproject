@@ -42,7 +42,7 @@ export default function Items(props) {
         <h4>Items</h4>
         <Filters {...props}/>
         {!items ? <h3>No Items at this time.</h3> : null}
-        <div className="item-container">{renderItems()}</div>
+        <div className="item-container" id='query-container'>{renderItems()}</div>
       </Layout>
     );
   } else {
@@ -51,7 +51,7 @@ export default function Items(props) {
         <h2>Welcome to the Items App!</h2>
         <div className="main">
           {!items ? <h3>No Items at this time.</h3> : null}
-          <div className="item-container">{renderItems()}</div>
+          <div className="item-container" id='query-container'>{renderItems()}</div>
         </div>
       </div>
     );
