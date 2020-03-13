@@ -507,6 +507,10 @@ margin-top: 3%;
   .button-container{
     margin: 10% 0;
   }
+
+  .buttons-container{
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 411px){
