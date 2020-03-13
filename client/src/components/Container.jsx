@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { getItems } from "../services/items";
 import Routes from "../routes";
 import Header from "../screens/Header";
+import Footer from "../components/shared/Footer"
 import { AZ, ZA, lowestFirst, highestFirst } from "./Sort";
 import { verifyToken } from '../services/auth'
 
@@ -270,6 +271,7 @@ export default class Container extends Component {
             handleMode={handleMode}
             isLight={isLight}
           />
+          <Footer/>
         </main>
       </>
     );

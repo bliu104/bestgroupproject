@@ -26,7 +26,7 @@ export default function Filters(props) {
         {isLight ? "Dark" : "Light"} Mode
     </button>
       <div className='buttons-container'>
-        <div className='button-subcontainer1'>
+        <div className='button-subcontainer1' id='but-container'>
           <button onClick={(e) => toggleHiddenFilter(e)}>Filter</button>
           {!isHiddenFilter && (
             <>

@@ -9,6 +9,7 @@ import Item from '../screens/Item'
 import Items from '../screens/Items'
 import ItemCreate from '../screens/ItemCreate'
 import ItemEdit from '../screens/ItemEdit'
+// import ContactUs from '../components/shared/ContactUs'
 import AuthenticatedRoute from './AuthenticatedRoute'
 
 
