@@ -30,7 +30,8 @@ export default class Container extends Component {
       isHiddenColor: true,
       isHiddenCondition: true,
       isHiddenPrice: true,
-      isHiddenFilter: true
+      isHiddenFilter: true,
+      active: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -144,7 +145,6 @@ export default class Container extends Component {
 
   changePrice = event => {
     const buttonInput = parseInt(event.target.className);
-
     if (buttonInput <= 25) {
       const newArray = searchByPrice(this.state.items, buttonInput);
       this.setState({ items: newArray });
@@ -200,6 +200,15 @@ export default class Container extends Component {
     });
   };
 
+  menuIconOnClick = () => {
+    const currentState = this.state.active
+    this.setState({
+      active: !currentState
+    })
+    console.log("working")
+    console.log(this.state.active)
+  }
+
   render() {
     const {
       user,
@@ -209,7 +218,8 @@ export default class Container extends Component {
       isHiddenCondition,
       value,
       isHiddenPrice,
-      } = this.state;
+      active
+    } = this.state;
 
     const {
       handleMode,
@@ -223,7 +233,8 @@ export default class Container extends Component {
       toggleHiddenPrice,
       changeColor,
       changeCondition,
-      createFilterCondition } = this
+      createFilterCondition,
+      menuIconOnClick } = this
 
     return (
       <>
@@ -239,13 +250,18 @@ export default class Container extends Component {
           </>
         )} */}
         {/* <button onClick={this.changeColor}>Reset</button> */}
-
         {/* <form onSubmit={this.handleSubmit}>
         </form> */}
-        <Header user={user} />
         {/* <button onClick={handleMode} id="toggleButton">
           {isLight ? "Dark" : "Light"} Mode
         </button> */}
+
+        <Header
+          user={user}
+          active={active}
+          menuIconOnClick={menuIconOnClick}
+        />
+
         <main className="container-not-bootstrap">
           <Routes
             items={items}
@@ -271,7 +287,7 @@ export default class Container extends Component {
             handleMode={handleMode}
             isLight={isLight}
           />
-          <Footer/>
+          <Footer />
         </main>
       </>
     );
