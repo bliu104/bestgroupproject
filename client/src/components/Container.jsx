@@ -3,6 +3,8 @@ import { getItems } from "../services/items";
 import Routes from "../routes";
 import Header from "../screens/Header";
 import { AZ, ZA, lowestFirst, highestFirst } from "./Sort";
+import Carousels from "./Carousels";
+
 import {
   searchByColor,
   uniqueColor,
@@ -201,6 +203,8 @@ export default class Container extends Component {
 
     return (
       <>
+        <Carousels />
+
         <button onClick={this.toggleHiddenFilter}>Filter</button>
         {!this.state.isHiddenFilter && (
           <>

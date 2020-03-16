@@ -1,57 +1,61 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700&display=swap");
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   height: 100%;
 }
 
 .light {
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 .dark {
   background-color: #262626;
-  color:#e0e0e0;
+  color: #e0e0e0;
 }
 
-.dark .item, .dark .navbar, .dark .form-container,.dark .layout footer{
-  box-shadow:2px 2px 5px black;
-  background-color:#1D1D1D;
-  border:none;
+.dark .item,
+.dark .navbar,
+.dark .form-container,
+.dark .layout footer {
+  box-shadow: 2px 2px 5px black;
+  background-color: #1d1d1d;
+  border: none;
 }
 .dark input {
   background-color: #e1e1e1;
 }
 
-.dark .item-container .item button,.dark .danger {
-  background-color: #BB86FC;
-  border:none;
-  color:#1D1D1D;
+.dark .item-container .item button,
+.dark .danger {
+  background-color: #bb86fc;
+  border: none;
+  color: #1d1d1d;
 }
 
-.sub-item-container, .sub-item-container2{
+.sub-item-container,
+.sub-item-container2 {
   display: flex;
   flex-direction: column;
   height: 50%;
   width: 100%;
-
 }
 
-.sub-item-container{
+.sub-item-container {
   object-fit: cover;
   overflow: hidden;
 }
 
-.sub-item-container2{
+.sub-item-container2 {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 }
 
 #toggleButton {
-  margin:10px;
-  border:2px solid #616161;
+  margin: 10px;
+  border: 2px solid #616161;
 }
 
 button {
@@ -238,14 +242,14 @@ button {
   padding: 2em 0;
 }
 
-.item-detail-container{
+.item-detail-container {
   display: flex;
   flex-direction: row;
   margin: 1em;
   width: 100%;
 }
 
-.image-container{
+.image-container {
   align-content: center;
   width: 50%;
   height: 100%;
@@ -254,12 +258,12 @@ button {
   flex-direction: column;
 }
 
-.item-detail-image{
+.item-detail-image {
   width: auto;
   height: 40vh;
 }
 
-.bold{
+.bold {
   font-weight: 800;
 }
 
@@ -270,20 +274,19 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: .5em;
+  padding: 0.5em;
   width: 20vw;
   height: 50vh;
   justify-content: space-between;
 }
 
-.item-image{
+.item-image {
   width: 100%;
   height: auto;
   border-radius: 5%;
-
 }
 
-.item{
+.item {
   margin-top: 1em;
   display: flex;
   justify-content: space-around;
@@ -309,7 +312,7 @@ button {
 }
 
 .item a::before {
-  content: '<-';
+  content: "<-";
 }
 
 .item-container .item {
@@ -333,7 +336,7 @@ button {
   margin: 0 2vw;
 }
 
-.button-container{
+.button-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -348,13 +351,13 @@ button {
 .edit {
   background: #b2dfdb;
   margin: 0 2vw;
-  border:none;
+  border: none;
 }
 
 .edit:hover {
   background: #82ada9;
-  color:white;
-  border:none;
+  color: white;
+  border: none;
 }
 
 .danger:hover {
@@ -430,8 +433,13 @@ button {
   margin: 4em auto;
 }
 
-@media only screen and (max-width: 411px){
-  .landing .item-container{
+.track {
+  height: 110%;
+  background-color: rgb(172, 169, 169);
+}
+
+@media only screen and (max-width: 411px) {
+  .landing .item-container {
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -439,15 +447,15 @@ button {
   }
 
   body .item-container {
-  margin: auto 0;
-  justify-content: center;
+    margin: auto 0;
+    justify-content: center;
   }
 
-  .landing{
+  .landing {
     text-align: center;
   }
 
-  .item-container .item{
+  .item-container .item {
     display: flex;
     flex-direction: column;
     width: 85vw;
@@ -456,48 +464,48 @@ button {
     align-self: center;
   }
 
-  .item-image{
+  .item-image {
     width: 30vw;
     height: auto;
     margin: auto;
   }
 
-  .form-container{
+  .form-container {
     width: 80%;
     height: auto;
   }
 
-  .form-container form{
+  .form-container form {
     margin: 0;
     width: 100%;
   }
 
-  .form-container form input{
+  .form-container form input {
     width: 80%;
   }
 
-  .layout .content .item-container{
+  .layout .content .item-container {
     display: flex;
     flex-direction: column;
   }
 
-  .navbar .nav .links a, .navbar span{
+  .navbar .nav .links a,
+  .navbar span {
     font-size: 1em;
   }
 
-  .links{
+  .links {
     display: flex;
     flex-direction: column;
-    font-size: .8em;
+    font-size: 0.8em;
   }
 
-  .item-detail-container{
+  .item-detail-container {
     display: flex;
     flex-direction: column;
   }
 
-  .item-detail-image{
+  .item-detail-image {
     margin: auto 0;
   }
-
 }
