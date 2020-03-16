@@ -190,7 +190,6 @@ export default class Container extends Component {
     const { items } = this.state;
     return uniqueColor(items).map(color => {
       return <button onClick={this.changeColor}>{color}</button>;
-      console.log('object')
     });
   };
 
@@ -206,8 +205,6 @@ export default class Container extends Component {
     this.setState({
       active: !currentState
     })
-    console.log("working")
-    console.log(this.state.active)
   }
 
   render() {
@@ -272,6 +269,7 @@ export default class Container extends Component {
         <button onClick={handleMode} id="toggleButton">
           {isLight ? "Dark" : "Light"} Mode
         </button> */}
+
         <Header
           user={user}
           active={active}
