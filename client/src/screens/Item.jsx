@@ -51,28 +51,40 @@ class Item extends Component {
 
     return (
       <Layout>
+        <Link to="/items">
+          <span> Back to all items</span>
+        </Link>
         <div className="item-detail-container">
           <div className="image-container">
-            <Link to="/items">
-              <span> Back to all items</span>
-            </Link>
-            <img src={item.image_url} className="item-detail-image"></img>
+            <div className='center'>
+              <img src={item.image_url} className="item-detail-image"></img>
+            </div>
           </div>
           <div className="item-property container">
-            <h2>{item.title}</h2>
-            <p>
-              <span className="bold">Item Description: </span>{" "}
-              {item.description}
-            </p>
-            <p>
-              <span className="bold">Condition: </span> {item.condition}
-            </p>
-            <p>
-              <span className="bold">Item Color: </span> {item.color}
-            </p>
-            <p>
-              <span className="bold">Price: </span> ${item.price}
-            </p>
+            <div>
+              <h2>{item.title}</h2>
+            </div>
+            <div>
+              <p>
+                <span className="bold">Item Description: </span>{" "}
+                {item.description}
+              </p>
+            </div>
+            <div>
+              <p>
+                <span className="bold">Condition: </span> {item.condition}
+              </p>
+            </div>
+            <div>
+              <p>
+                <span className="bold">Item Color: </span> {item.color}
+              </p>
+            </div>
+            <div>
+              <p>
+                <span className="bold">Price: </span> ${item.price}
+              </p>
+            </div>
             <div className="button-container">
               <button className="danger" onClick={this.destroy}>
                 Delete Item
@@ -81,12 +93,7 @@ class Item extends Component {
                 className="edit"
                 onClick={() =>
                   this.props.history.push(
-                    `/items/${this.props.match.params.id}/edit`
-                  )
-                }
-              >
-                Edit
-              </button>
+                    `/items/${this.props.match.params.id}/edit`)}> Edit </button>
             </div>
           </div>
         </div>

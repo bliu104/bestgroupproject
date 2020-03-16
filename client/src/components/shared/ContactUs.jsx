@@ -19,7 +19,7 @@ import Home from '../../screens/Home';
 
     return (
     
-        
+
     <form className="contact-form" onSubmit={sendEmail}>
         <input type="hidden" name="contact_number" />
         <label>Name</label><br/>

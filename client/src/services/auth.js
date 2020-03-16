@@ -40,3 +40,26 @@ export const changePassword = async (passwords, user) => {
         throw error
     }
 }
+
+const storeToken = (token) => {
+  localStorage.setItem('token', token);
+  api.defaults.headers.common.authorization = `Bearer ${token}`;
+}
+
+export const verifyToken = async () => {
+  const token = localStorage.getItem('token');
+  if (token !== null) {
+    try {
+      const resp = await api.get('/verify', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      storeToken(token);
+      return resp.data.user;
+    } catch (e) {
+      console.log(e.message);
+      console.log('invalid token');
+    }
+  }
+};

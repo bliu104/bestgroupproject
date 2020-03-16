@@ -6,6 +6,9 @@ body {
   font-family: 'Montserrat';
   height: 100%;
 }
+h5{
+  font-size: 1em;
+}
 
 .light {
   background-color:rgb(255, 255, 255);
@@ -46,11 +49,10 @@ body {
 .sub-item-container2{
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 #toggleButton {
-  margin:10px;
   border:2px solid #616161;
 }
 
@@ -90,17 +92,6 @@ button {
   display: flex;
   transition: all 0.4s ease;
 }
-
-.container {
-  height: 100%;
-}
-
-/* .row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3em;
-} */
 
 .form-container {
   align-self: center;
@@ -176,13 +167,6 @@ button {
   height: Calc(100vh - 4em);
 }
 
-/* .layout .content {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  flex: 1;
-} */
-
 .layout .content nav {
   display: flex;
   flex-direction: column;
@@ -216,14 +200,6 @@ button {
   border-bottom: 2px solid #333;
 }
 
-.layout .content .main {
-  flex: 3 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .layout footer {
   background: #9e9e9e;
   text-align: center;
@@ -235,13 +211,14 @@ button {
   grid-gap: 2em;
   grid-template-rows: auto;
   width: 80%;
-  padding: 2em 0;
+  padding: 1em 0;
+  justify-items: center;
+  margin: auto;
 }
 
 .item-detail-container{
   display: flex;
   flex-direction: row;
-  margin: 1em;
   width: 100%;
 }
 
@@ -249,7 +226,6 @@ button {
   align-content: center;
   width: 50%;
   height: 100%;
-  margin: auto 0;
   display: flex;
   flex-direction: column;
 }
@@ -257,6 +233,11 @@ button {
 .item-detail-image{
   width: auto;
   height: 40vh;
+  margin: 5% 0;
+}
+
+.center{
+  width: 100%;
 }
 
 .bold{
@@ -330,13 +311,25 @@ button {
 
 .danger {
   background: #e57373;
-  margin: 0 2vw;
 }
 
 .button-container{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-bottom: 3%;
+}
+
+.buttons-container, .button-subcontainer1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1%;
+}
+
+.button-subcontainer1{
+margin-top: 3%;
 }
 
 .error {
@@ -347,7 +340,7 @@ button {
 
 .edit {
   background: #b2dfdb;
-  margin: 0 2vw;
+  margin: 0 .5vw;
   border:none;
 }
 
@@ -363,7 +356,6 @@ button {
 }
 
 .alert {
-  /* background: #ef9a9a; */
   width: 400px;
   height: 200px;
   border-radius: 3px;
@@ -417,7 +409,7 @@ button {
   opacity: 0.6;
 }
 
-.landing .container {
+.landing  {
   text-align: center;
 }
 
@@ -426,78 +418,6 @@ button {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2em;
   grid-template-rows: auto;
-  width: 80%;
   margin: 4em auto;
 }
 
-@media only screen and (max-width: 411px){
-  .landing .item-container{
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    width: 100%;
-  }
-
-  body .item-container {
-  margin: auto 0;
-  justify-content: center;
-  }
-
-  .landing{
-    text-align: center;
-  }
-
-  .item-container .item{
-    display: flex;
-    flex-direction: column;
-    width: 85vw;
-    height: auto;
-    overflow: hidden;
-    align-self: center;
-  }
-
-  .item-image{
-    width: 30vw;
-    height: auto;
-    margin: auto;
-  }
-
-  .form-container{
-    width: 80%;
-    height: auto;
-  }
-
-  .form-container form{
-    margin: 0;
-    width: 100%;
-  }
-
-  .form-container form input{
-    width: 80%;
-  }
-
-  .layout .content .item-container{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .navbar .nav .links a, .navbar span{
-    font-size: 1em;
-  }
-
-  .links{
-    display: flex;
-    flex-direction: column;
-    font-size: .8em;
-  }
-
-  .item-detail-container{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .item-detail-image{
-    margin: auto 0;
-  }
-
-}
