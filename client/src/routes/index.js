@@ -10,7 +10,7 @@ import Items from '../screens/Items'
 import ItemCreate from '../screens/ItemCreate'
 import ItemEdit from '../screens/ItemEdit'
 import AuthenticatedRoute from './AuthenticatedRoute'
-const Routes = ({ user, items, setUser, clearUser, addItem , contactUs }) => (
+const Routes = ({ user, items, setUser, clearUser, addItem , contactUs}) => (
     <Switch>
         <Route
             exact
