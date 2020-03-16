@@ -30,10 +30,13 @@ export const signOut = async user => {
 }
 
 export const changePassword = async (passwords, user) => {
-    try {
+  try {
+    
+      console.log(passwords,user)
         const resp = await api.post('/')
         return resp.data
     } catch (error) {
+      console.log(':(')
         throw error
     }
 }

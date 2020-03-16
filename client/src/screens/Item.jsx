@@ -40,7 +40,10 @@ class Item extends Component {
         <Redirect
           to={{
             pathname: "/items",
-            state: { msg: "Item succesfully deleted!" }
+            state: {
+              msg: "Item succesfully deleted!",
+              deletedItem: item 
+            }
           }}
         />
       );

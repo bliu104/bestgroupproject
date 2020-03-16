@@ -30,7 +30,7 @@ export default class Container extends Component {
       isHiddenColor: true,
       isHiddenCondition: true,
       isHiddenPrice: true,
-      isHiddenFilter: true,
+      isHiddenFilter: false,
       active: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -190,6 +190,7 @@ export default class Container extends Component {
     const { items } = this.state;
     return uniqueColor(items).map(color => {
       return <button onClick={this.changeColor}>{color}</button>;
+      console.log('object')
     });
   };
 
@@ -253,15 +254,29 @@ export default class Container extends Component {
         {/* <form onSubmit={this.handleSubmit}>
         </form> */}
         {/* <button onClick={handleMode} id="toggleButton">
+        )}
+        <button onClick={this.changeColor}>Reset</button>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Sort
+            <select value={this.state.value} onChange={this.handleChange}>
+              <option value="AZ">A to Z</option>
+              <option value="ZA">Z to A</option>
+              <option value="highestFirst">High to Lowest</option>
+              <option value="lowestFirst">Lowest to Highest</option>
+            </select>
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        <Header user={user} />
+        <button onClick={handleMode} id="toggleButton">
           {isLight ? "Dark" : "Light"} Mode
         </button> */}
-
         <Header
           user={user}
           active={active}
           menuIconOnClick={menuIconOnClick}
         />
-
         <main className="container-not-bootstrap">
           <Routes
             items={items}
