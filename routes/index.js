@@ -15,5 +15,6 @@ router.get('/items/:id', controllers.getItemById)
 router.post('/items', restrict, controllers.createItem)
 router.put('/items/:id', restrict, controllers.updateItem)
 router.delete('/items/:id', restrict, controllers.deleteItem)
+router.get('/verify', controllers.verifyUser)
 
 module.exports = router

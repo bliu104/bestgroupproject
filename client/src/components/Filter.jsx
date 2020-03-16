@@ -26,7 +26,6 @@ export const searchByPrice = (array, price) => {
       arrayPrice.push(item);
     }
   });
-
   return arrayPrice;
 };
 
