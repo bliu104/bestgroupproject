@@ -227,6 +227,8 @@ export default class Container extends Component {
           <input type="submit" value="Submit" />
         </form>
         <Header user={user} />
+
+        
         <button onClick={handleMode} id="toggleButton">
           {isLight ? "Dark" : "Light"} Mode
         </button>

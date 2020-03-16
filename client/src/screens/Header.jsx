@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Navbar from '../components/shared/Navbar.jsx'
+import ChangePassword from '../screens/ChangePassword'
 
 const authenticatedOptions = (
   <div className="links">
