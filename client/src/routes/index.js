@@ -58,7 +58,12 @@ const Routes = ({ user, items, setUser, clearUser, addItem , contactUs}) => (
             user={user}
             path="/create"
             render={props => <ItemCreate {...props} addItem={addItem} />}
-        />
+    />
+    
+    <AuthenticatedRoute
+      user={user}
+      path="/change-password"
+      render = {ChangePassword} />
     </Switch>
 )
 
