@@ -111,7 +111,7 @@ export default class Items extends Component {
                       <img src={item.image_url} className='item-image'></img>
                     </div>
                     <div className='sub-item-container2'>
-                      <h5>{item.title.slice(0, 30)}...</h5>
+                      <h5>{item.title.slice(0, 60)}...</h5>
                       {this.renderButton(item._id)}
                     </div>
                   </div>
