@@ -128,7 +128,6 @@ export default class Items extends Component {
         <div className="landing">
           <h2>Welcome to the Items App!</h2>
           <div className="main">
-            {console.log(items)}
             {!items ? <h3>No Items at this time.</h3> : null}
             <div className="item-container">{itemsArr}</div>
           </div>

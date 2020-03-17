@@ -39,6 +39,7 @@ const Routes = ({ user,
   isLight,
   contactUs }) => (
 
+<<<<<<< HEAD
     // <Switch>
     //   <Route
     //     exact
@@ -102,6 +103,8 @@ const Routes = ({ user,
     //   />
     // </Switch>
 
+=======
+>>>>>>> 37cda6f2cbb0a54aeed608e4ed10ce23d7399e08
     <Switch>
       <Route
         exact
@@ -126,11 +129,14 @@ const Routes = ({ user,
         path="/ContactUs"
         render={props => <ContactUs {...props} />}
       />
+<<<<<<< HEAD
       <Route
         exact
         path="/Search"
         render={props => <Search {...props} />}
       />
+=======
+>>>>>>> 37cda6f2cbb0a54aeed608e4ed10ce23d7399e08
       <AuthenticatedRoute
         exact
         path="/items"
@@ -175,7 +181,12 @@ const Routes = ({ user,
       <AuthenticatedRoute
         user={user}
         path="/change-password"
+<<<<<<< HEAD
         render={ChangePassword} />
+=======
+        render={ChangePassword}
+      />
+>>>>>>> 37cda6f2cbb0a54aeed608e4ed10ce23d7399e08
     </Switch>
   )
 

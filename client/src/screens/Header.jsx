@@ -7,7 +7,7 @@ import ChangePassword from '../screens/ChangePassword'
 
 const authenticatedOptions = (
   <div className="links">
-    <NavLink to="/">Home</NavLink>
+    <NavLink className='link-div' to="/">Home</NavLink>
     <NavLink className='link-div' to='/items'>Items</NavLink>
     <NavLink className='link-div' to='/create'>Create Item</NavLink>
     <NavLink className='link-div' to="/change-password">Change Password</NavLink>
@@ -22,18 +22,11 @@ const unauthenticatedOptions = (
   </div>
 )
 
-// const alwaysOptions = (
-//   <div className="links">
-//     <NavLink to="/">Home</NavLink>
-//   </div>
-// )
-
 const Header = ({ user, menuIconOnClick, active }) => (
   <>
     <Navbar>
       {user && <span className="navbar-text">Welcome, {user.username} </span>}
       <div className="nav">
-        {/* {alwaysOptions} */}
         <div>
           {user ? null : unauthenticatedOptions}
         </div>

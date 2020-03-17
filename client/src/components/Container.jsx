@@ -96,11 +96,11 @@ export default class Container extends Component {
   handleSubmit(event) {
     event.preventDefault();
     let input = "";
-    let value = event.target.value 
-    console.log(event.target)
+    let value = event.target.value;
+    console.log(event.target);
     switch (this.state.value) {
       case "AZ":
-        console.log(this.state.items)
+        console.log(this.state.items);
         input = AZ(this.state.items);
         break;
       case "ZA":
@@ -209,8 +209,6 @@ export default class Container extends Component {
     this.setState({
       active: !currentState
     });
-    console.log("working");
-    console.log(this.state.active);
   };
 
   render() {
@@ -279,8 +277,6 @@ export default class Container extends Component {
         </button> */}
         <Header user={user} active={active} menuIconOnClick={menuIconOnClick} />
         <main className="container-not-bootstrap">
-          <div>Electrics</div>
-
           <Routes
             items={items}
             user={user}

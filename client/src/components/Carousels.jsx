@@ -8,10 +8,10 @@ class Carousels extends Component {
     this.state = {
       currentIndex: 0,
       images: [
-        "https://www.pokemoncenter.com/wcsstore/PokemonCatalogAssetStore/images/catalog/products/P6089/701-05314/P6089_701-05314_01.jpg",
-        "https://www.pokemoncenter.com/wcsstore/PokemonCatalogAssetStore/images/catalog/products/P6089/701-05314/P6089_701-05314_02.jpg",
-        "https://www.pokemoncenter.com/wcsstore/PokemonCatalogAssetStore/images/catalog/products/P6089/701-05314/P6089_701-05314_04.jpg",
-        "https://www.pokemoncenter.com/wcsstore/PokemonCatalogAssetStore/images/catalog/products/P6089/701-05314/P6089_701-05314_05.jpg"
+        'https://images-na.ssl-images-amazon.com/images/I/71o3VutEycL._SX679_.jpg',
+        'https://i.etsystatic.com/7965790/r/il/7f35c9/1591964160/il_1588xN.1591964160_9eaj.jpg',
+        'https://i.etsystatic.com/7965790/r/il/bb42ee/1590944534/il_1588xN.1590944534_jupi.jpg',
+        'https://i.etsystatic.com/7965790/r/il/f89a44/1590976168/il_1588xN.1590976168_2tua.jpg'
       ]
     };
     this.nextSlide = this.nextSlide.bind(this);
@@ -27,6 +27,7 @@ class Carousels extends Component {
       currentIndex: index
     });
   }
+
   nextSlide() {
     const lastIndex = this.state.images.length - 1;
     const resetIndex = this.state.currentIndex === lastIndex;
@@ -39,20 +40,26 @@ class Carousels extends Component {
 
   render() {
     const { currentIndex, images } = this.state;
-    let rotation = images.slice(currentIndex, currentIndex + 3);
-    if (rotation.length < 3) {
-      rotation = rotation.concat(images.slice(0, 3 - rotation.length));
+    let rotation = images.slice(currentIndex, currentIndex + 4);
+    if (rotation.length < 4) {
+      rotation = rotation.concat(images.slice(0, 4 - rotation.length));
     }
 
     return (
-      <div>
-        <button onClick={this.nextSlide}>right</button>
+      <div className='carousel-container'>
+        <div className='arrow-container' onClick={this.prevSlide}>
+          <img src='https://i.imgur.com/PQVDPFp.png?1' className='arrow-image' />
+        </div>
         <div className="track">
           {rotation.map((image, index) => (
-            <img key={index} src={image} alt="" style={{ width: 200 + "px" }} />
+            <div className={`carousel-image-container${index}`}>
+              <img key={index} src={image} alt="Products" className={`carousel${index}`} />
+            </div>
           ))}
         </div>
-        <button onClick={this.prevSlide}>left</button>
+        <div className='arrow-container' onClick={this.nextSlide}>
+          <img src='https://i.imgur.com/XXEyxGW.png?7' className='arrow-image'/>
+        </div>
       </div>
     );
   }
