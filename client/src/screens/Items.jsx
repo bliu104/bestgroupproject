@@ -2,14 +2,15 @@ import React, { Component } from "react";
 import Layout from "../components/shared/Layout";
 import Filters from "./Filters";
 import { getItems } from "../services/items";
-import Search from "../components/Search";
+
 import { AZ, ZA, lowestFirst, highestFirst } from "../components/Sort";
 
 export default class Items extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: null
+      items: null,
+      resetItems: []
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -30,7 +31,8 @@ export default class Items extends Component {
     try {
       const allItems = await getItems();
       this.setState({
-        items: allItems
+        items: allItems,
+        resetItems: allItems
       });
     } catch (err) {
       console.error(err);
@@ -63,6 +65,32 @@ export default class Items extends Component {
         break;
     }
   }
+  handleSubmitSearch = event => {
+    event.preventDefault();
+
+    this.search(this.state.items, this.state.input);
+  };
+
+  handleChangeSearch = event => {
+    this.setState({ input: event.target.value });
+    console.log(this.state.input);
+  };
+  search = (items, input) => {
+    let itemsArray = [];
+    input = input.toLowerCase();
+
+    items.map(item => {
+      if (item.title.toLowerCase().includes(input)) {
+        itemsArray.push(item);
+      }
+    });
+    this.setState({ items: itemsArray });
+  };
+
+  reset = () => {
+    this.setState({ items: this.state.resetItems });
+  };
+
   render() {
     const {
       user,
@@ -93,7 +121,17 @@ export default class Items extends Component {
       return (
         <Layout>
           <h4>Items</h4>
-          <Search />
+          <div>
+            Search Bar
+            <form onSubmit={this.handleSubmitSearch}>
+              <input
+                type="text"
+                value={this.state.input}
+                onChange={this.handleChangeSearch}
+              />
+            </form>
+            <button onClick={this.reset}>reset</button>
+          </div>
           <label htmlFor="sort">Sort:</label>
 
           <select id="sort" onChange={this.handleChange}>
