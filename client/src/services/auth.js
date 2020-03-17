@@ -50,12 +50,8 @@ export const verifyToken = async () => {
   const token = localStorage.getItem('token');
   if (token !== null) {
     try {
-      const resp = await api.get('/verify', {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
-      storeToken(token);
+      const resp = await api.get('/verify');
+      // storeToken(token);
       return resp.data.user;
     } catch (e) {
       console.log(e.message);
