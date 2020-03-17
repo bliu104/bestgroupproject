@@ -21,7 +21,6 @@ export const getItemById = async id => {
 export const createItem = async item => {
   try {
     const resp = await api.post('/items', item)
-    console.log(resp.data)
     return resp
   } catch (error) {
     throw error

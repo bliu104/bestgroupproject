@@ -97,10 +97,8 @@ export default class Container extends Component {
     event.preventDefault();
     let input = "";
     let value = event.target.value 
-    console.log(event.target)
     switch (this.state.value) {
       case "AZ":
-        console.log(this.state.items)
         input = AZ(this.state.items);
         break;
       case "ZA":
@@ -193,7 +191,6 @@ export default class Container extends Component {
     const { items } = this.state;
     return uniqueColor(items).map(color => {
       return <button onClick={this.changeColor}>{color}</button>;
-      console.log("object");
     });
   };
 

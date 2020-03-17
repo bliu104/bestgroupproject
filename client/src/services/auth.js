@@ -31,12 +31,9 @@ export const signOut = async user => {
 
 export const changePassword = async (passwords, user) => {
   try {
-    
-      console.log(passwords,user)
         const resp = await api.post('/')
         return resp.data
     } catch (error) {
-      console.log(':(')
         throw error
     }
 }
@@ -51,7 +48,6 @@ export const verifyToken = async () => {
   if (token !== null) {
     try {
       const resp = await api.get('/verify');
-      // storeToken(token);
       return resp.data.user;
     } catch (e) {
       console.log(e.message);

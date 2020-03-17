@@ -27,10 +27,10 @@ const Header = ({ user, menuIconOnClick, active }) => (
     <Navbar>
       {user && <span className="navbar-text">Welcome, {user.username} </span>}
       <div className="nav">
-        <div>
+        <>
           {user ? null : unauthenticatedOptions}
-        </div>
-        <div className='hamburger-container' onClick={(e) => menuIconOnClick(e)}>
+        </>
+        <div className='hamburger-container' id='right-margin' onClick={(e) => menuIconOnClick(e)}>
           <div className='bar1'></div>
           <div className='bar2'></div>
           <div className='bar3'></div>

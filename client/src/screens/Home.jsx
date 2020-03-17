@@ -6,11 +6,14 @@ import CarouselElectronics from '../components/CarouselElectronics'
 const Home = () => (
   <Layout>
     <div>
-      <h4>See what's trending</h4>
+      <div className='carousel-divs'>
+      <h2>See what's trending</h2>
       <Carousels />
-      <br/>
-      <h4>What's new in electronics</h4>
+      </div>
+      <div className='carousel-divs'>
+      <h2>What's new in electronics</h2>
       <CarouselElectronics />
+      </div>
     </div>
 
   </Layout>
