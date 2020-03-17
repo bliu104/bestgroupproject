@@ -240,8 +240,6 @@ export default class Container extends Component {
 
     return (
       <>
-        <Carousels />
-
         {/* <button onClick={this.toggleHiddenFilter}>Filter</button> */}
         {/* <button onClick={this.toggleHiddenFilter}>Filter</button>
         {!this.state.isHiddenFilter && (
@@ -278,6 +276,12 @@ export default class Container extends Component {
         </button> */}
         <Header user={user} active={active} menuIconOnClick={menuIconOnClick} />
         <main className="container-not-bootstrap">
+          <div>Electrics</div>
+          <Carousels />
+          <div>Mews</div>
+          <Carousels />
+          <div>Stuff</div>
+          <Carousels />
           <Routes
             items={items}
             user={user}
