@@ -272,10 +272,13 @@ export default class Container extends Component {
           <input type="submit" value="Submit" />
         </form>
         <Header user={user} />
-        <button onClick={handleMode} id="toggleButton">
-          {isLight ? "Dark" : "Light"} Mode
-        </button> */}
+        */}
+
         <Header user={user} active={active} menuIconOnClick={menuIconOnClick} />
+        <button onClick={handleMode} id="toggleButton" style={{ margin: 15 }}>
+          {isLight ? "Dark" : "Light"} Mode{" "}
+        </button>
+
         <main className="container-not-bootstrap">
           <Routes
             items={items}

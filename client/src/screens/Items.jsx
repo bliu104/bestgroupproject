@@ -116,61 +116,50 @@ export default class Items extends Component {
       isLight,
       contactUs
     } = this.props;
-    const { items, itemsArr } = this.state;
-    if (user || !user) {
-      return (
-        <Layout>
-          <h4>Items</h4>
-          <div>
-            Search Bar
-            <form onSubmit={this.handleSubmitSearch}>
-              <input
-                type="text"
-                value={this.state.input}
-                onChange={this.handleChangeSearch}
-              />
-            </form>
-            <button onClick={this.reset}>reset</button>
-          </div>
-          <label htmlFor="sort">Sort:</label>
+    const { items } = this.state;
 
-          <select id="sort" onChange={this.handleChange}>
-            <option value="AZ">A-Z</option>
-            <option value="ZA">Z-A</option>
-            <option value="highestFirst">Price High to Low</option>
-            <option value="lowestFirst">Price Low to High</option>
-          </select>
-          <div className="item-container">
-            {items ? (
-              items.map(item => {
-                return (
-                  <div className="item" key={item._id}>
-                    <div className="sub-item-container">
-                      <img src={item.image_url} className="item-image"></img>
-                    </div>
-                    <div className="sub-item-container2">
-                      <h5>{item.title.slice(0, 30)}...</h5>
-                      {this.renderButton(item._id)}
-                    </div>
-                  </div>
-                );
-              })
-            ) : (
-              <h3>No Items at this time. </h3>
-            )}
-          </div>
-        </Layout>
-      );
-    } else {
-      return (
-        <div className="landing">
-          <h2>Welcome to the Items App!</h2>
-          <div className="main">
-            {!items ? <h3>No Items at this time.</h3> : null}
-            <div className="item-container">{itemsArr}</div>
-          </div>
+    return (
+      <Layout>
+        <h4>Items</h4>
+        <div>
+          Search Bar
+          <form onSubmit={this.handleSubmitSearch}>
+            <input
+              type="text"
+              value={this.state.input}
+              onChange={this.handleChangeSearch}
+            />
+          </form>
+          <button onClick={this.reset}>reset</button>
         </div>
-      );
-    }
+        <label htmlFor="sort">Sort:</label>
+
+        <select id="sort" onChange={this.handleChange}>
+          <option value="AZ">A-Z</option>
+          <option value="ZA">Z-A</option>
+          <option value="highestFirst">Price High to Low</option>
+          <option value="lowestFirst">Price Low to High</option>
+        </select>
+        <div className="item-container">
+          {items ? (
+            items.map(item => {
+              return (
+                <div className="item" key={item._id}>
+                  <div className="sub-item-container">
+                    <img src={item.image_url} className="item-image"></img>
+                  </div>
+                  <div className="sub-item-container2">
+                    <h5>{item.title.slice(0, 60)}...</h5>
+                    {this.renderButton(item._id)}
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <h3>No Items at this time. </h3>
+          )}
+        </div>
+      </Layout>
+    );
   }
 }
