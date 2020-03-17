@@ -1,0 +1,30 @@
+.carousel-container{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin: 2%;
+}
+
+.track{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.carousel0, .carousel1, .carousel2, .carousel3{
+  width: 20vw;
+  height: 45vh;
+  overflow: hidden;
+  object-fit: cover;
+  padding: 3%;
+}
+
+.arrow-image{
+  width: 5vw;
+  margin: auto 0;
+  cursor: pointer;
+}
+
+.arrow-container{
+  align-self: center
+}
