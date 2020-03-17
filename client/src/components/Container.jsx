@@ -27,7 +27,7 @@ export default class Container extends Component {
       items: [],
       itemsReset: [],
       isLight: true,
-      value: "AZ",
+      value: "",
       isHiddenColor: true,
       isHiddenCondition: true,
       isHiddenPrice: true,
@@ -96,8 +96,11 @@ export default class Container extends Component {
   handleSubmit(event) {
     event.preventDefault();
     let input = "";
+    let value = event.target.value 
+    console.log(event.target)
     switch (this.state.value) {
       case "AZ":
+        console.log(this.state.items)
         input = AZ(this.state.items);
         break;
       case "ZA":

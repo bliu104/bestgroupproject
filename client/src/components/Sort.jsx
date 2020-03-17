@@ -19,23 +19,24 @@ function dynamicSort(property) {
 //https://ourcodeworld.com/articles/read/764/how-to-sort-alphabetically-an-array-of-objects-by-key-in-javascript
 
 export const AZ = array => {
-  array.sort(dynamicSort("title"));
+  return array.sort(dynamicSort("title"));
+
 };
 
-export const ZA = array => {
-  array.sort(dynamicSort("title")).reverse();
+export const ZA = arr => {
+  return arr.sort(dynamicSort("title")).reverse();
 };
 
 export const lowestFirst = array => {
-  array.sort(function(a, b) {
-    return parseFloat(a.price) - parseFloat(b.price);
+  return array.sort(function(a, b) {
+    return parseInt(a.price) - parseInt(b.price);
   });
 };
 
 export const highestFirst = array => {
-  array
+  return array
     .sort(function(a, b) {
-      return parseFloat(a.price) - parseFloat(b.price);
+      return parseInt(b.price) - parseInt(a.price);
     })
-    .reverse();
+    
 };

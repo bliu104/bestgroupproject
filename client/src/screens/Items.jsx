@@ -3,14 +3,15 @@ import Layout from "../components/shared/Layout";
 import Filters from "./Filters";
 import { getItems } from "../services/items";
 import Search from "../components/Search";
+import { AZ, ZA, lowestFirst, highestFirst } from "../components/Sort";
 
 export default class Items extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
-      itemsArr: []
+      items: null
     };
+    this.handleChange = this.handleChange.bind(this);
   }
   renderButton = id => {
     const { user, history, match } = this.props;
@@ -24,35 +25,44 @@ export default class Items extends Component {
       return null;
     }
   };
-  //test
+
   async componentDidMount() {
     try {
       const allItems = await getItems();
       this.setState({
         items: allItems
       });
-
-      let itemsArr = allItems.map(item => {
-        return (
-          <div className="item" key={item._id}>
-            <div className="sub-item-container">
-              <img src={item.image_url} className="item-image"></img>
-            </div>
-            <div className="sub-item-container2">
-              <h5>{item.title.slice(0, 30)}...</h5>
-              {this.renderButton(item._id)}
-            </div>
-          </div>
-        );
-      });
-      this.setState({
-        itemsArr: itemsArr
-      });
     } catch (err) {
       console.error(err);
     }
   }
 
+  handleChange(e) {
+    let input = e.target.value; // a-z
+    const { items } = this.state;
+    switch (input) {
+      case "AZ":
+        this.setState({
+          items: AZ(items)
+        });
+        break;
+      case "ZA":
+        this.setState({
+          items: ZA(items)
+        });
+        break;
+      case "lowestFirst":
+        this.setState({
+          items: lowestFirst(items)
+        });
+        break;
+      case "highestFirst":
+        this.setState({
+          items: highestFirst(items)
+        });
+        break;
+    }
+  }
   render() {
     const {
       user,
@@ -79,36 +89,38 @@ export default class Items extends Component {
       contactUs
     } = this.props;
     const { items, itemsArr } = this.state;
-    if (user) {
+    if (user || !user) {
       return (
         <Layout>
           <h4>Items</h4>
           <Search />
+          <label htmlFor="sort">Sort:</label>
 
-          <Filters
-            user={user}
-            items={items}
-            toggleHiddenCondition={toggleHiddenCondition}
-            isHiddenCondition={isHiddenCondition}
-            createFilterCondition={createFilterCondition}
-            createFilterColor={createFilterColor}
-            toggleHiddenColor={toggleHiddenColor}
-            toggleHiddenColor={toggleHiddenColor}
-            toggleHiddenPrice={toggleHiddenPrice}
-            createFilterPrice={createFilterPrice}
-            toggleHiddenFilter={toggleHiddenFilter}
-            handleSubmit={handleSubmit}
-            handleChange={handleChange}
-            isHiddenColor={isHiddenColor}
-            value={value}
-            isHiddenPrice={isHiddenPrice}
-            changeColor={changeColor}
-            changeCondition={changeCondition}
-            handleMode={handleMode}
-            isLight={isLight}
-          />
-          {!items ? <h3>No Items at this time. </h3> : null}
-          <div className="item-container">{itemsArr}</div>
+          <select id="sort" onChange={this.handleChange}>
+            <option value="AZ">A-Z</option>
+            <option value="ZA">Z-A</option>
+            <option value="highestFirst">Price High to Low</option>
+            <option value="lowestFirst">Price Low to High</option>
+          </select>
+          <div className="item-container">
+            {items ? (
+              items.map(item => {
+                return (
+                  <div className="item" key={item._id}>
+                    <div className="sub-item-container">
+                      <img src={item.image_url} className="item-image"></img>
+                    </div>
+                    <div className="sub-item-container2">
+                      <h5>{item.title.slice(0, 30)}...</h5>
+                      {this.renderButton(item._id)}
+                    </div>
+                  </div>
+                );
+              })
+            ) : (
+              <h3>No Items at this time. </h3>
+            )}
+          </div>
         </Layout>
       );
     } else {
