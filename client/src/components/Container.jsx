@@ -277,11 +277,7 @@ export default class Container extends Component {
         <Header user={user} active={active} menuIconOnClick={menuIconOnClick} />
         <main className="container-not-bootstrap">
           <div>Electrics</div>
-          <Carousels />
-          <div>Mews</div>
-          <Carousels />
-          <div>Stuff</div>
-          <Carousels />
+
           <Routes
             items={items}
             user={user}

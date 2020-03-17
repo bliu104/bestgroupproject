@@ -5,6 +5,7 @@ import Landing from '../screens/Landing'
 import SignIn from '../screens/SignIn'
 import SignOut from '../screens/SignOut'
 import SignUp from '../screens/SignUp'
+import Search from '../components/Search'
 import Item from '../screens/Item'
 import Items from '../screens/Items'
 import ItemCreate from '../screens/ItemCreate'
@@ -36,7 +37,7 @@ const Routes = ({ user,
   changeCondition,
   handleMode,
   isLight,
-  contactUs}) => (
+  contactUs }) => (
 
     // <Switch>
     //   <Route
@@ -101,34 +102,39 @@ const Routes = ({ user,
     //   />
     // </Switch>
 
-  <Switch>
-    <Route
-      exact
-      path="/"
-      render={props => (user ? <Home /> : <Landing {...props} items={items} />)}
-    />
-    <Route
-      path="/sign-in"
-      render={props => <SignIn {...props} setUser={setUser} />}
-    />
-    <Route
-      path="/sign-up"
-      render={props => <SignUp {...props} setUser={setUser} />}
-    />
-    <Route
-      exact
-      path="/sign-out"
-      render={props => <SignOut {...props} clearUser={clearUser} user={user} />}
-    />
-    <Route
-      exact
-      path="/ContactUs"
-      render={props => <ContactUs {...props} />}
-    />
-    <AuthenticatedRoute
-      exact
-      path="/items"
-      user={user}
+    <Switch>
+      <Route
+        exact
+        path="/"
+        render={props => (user ? <Home /> : <Landing {...props} items={items} />)}
+      />
+      <Route
+        path="/sign-in"
+        render={props => <SignIn {...props} setUser={setUser} />}
+      />
+      <Route
+        path="/sign-up"
+        render={props => <SignUp {...props} setUser={setUser} />}
+      />
+      <Route
+        exact
+        path="/sign-out"
+        render={props => <SignOut {...props} clearUser={clearUser} user={user} />}
+      />
+      <Route
+        exact
+        path="/ContactUs"
+        render={props => <ContactUs {...props} />}
+      />
+      <Route
+        exact
+        path="/Search"
+        render={props => <Search {...props} />}
+      />
+      <AuthenticatedRoute
+        exact
+        path="/items"
+        user={user}
         render={props => <Items {...props} user={user} items={items}
           toggleHiddenCondition={toggleHiddenCondition}
           isHiddenCondition={isHiddenCondition}
@@ -148,29 +154,29 @@ const Routes = ({ user,
           changeCondition={changeCondition}
           handleMode={handleMode}
           isLight={isLight} />}
-    />
-    <AuthenticatedRoute
-      exact
-      path="/items/:id"
-      user={user}
-      render={props => <Item {...props} />}
-    />
-    <AuthenticatedRoute
-      exact
-      user={user}
-      path="/items/:id/edit"
-      render={props => <ItemEdit {...props} />}
-    />
-    <AuthenticatedRoute
-      user={user}
-      path="/create"
-      render={props => <ItemCreate {...props} addItem={addItem} />}
-    />
-    <AuthenticatedRoute
-      user={user}
-      path="/change-password"
-      render={ChangePassword} />
-  </Switch>
-)
+      />
+      <AuthenticatedRoute
+        exact
+        path="/items/:id"
+        user={user}
+        render={props => <Item {...props} />}
+      />
+      <AuthenticatedRoute
+        exact
+        user={user}
+        path="/items/:id/edit"
+        render={props => <ItemEdit {...props} />}
+      />
+      <AuthenticatedRoute
+        user={user}
+        path="/create"
+        render={props => <ItemCreate {...props} addItem={addItem} />}
+      />
+      <AuthenticatedRoute
+        user={user}
+        path="/change-password"
+        render={ChangePassword} />
+    </Switch>
+  )
 
 export default Routes
