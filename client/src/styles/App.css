@@ -94,7 +94,7 @@ button {
 
 .navbar .nav {
   display: flex;
-  align-self: normal;
+  align-self: center;
 }
 
 .form-container {
