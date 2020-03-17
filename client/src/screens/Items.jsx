@@ -24,17 +24,7 @@ export default class Items extends Component {
       return null;
     }
   };
-
-  // search = (items, input) => {
-  //   let arrayItems = [];
-  //   items.map(item => {
-  //     if (item.title.includes(input)) {
-  //       arrayItems.push(items);
-  //     }
-  //   });
-  //   return arrayItems;
-  // };
-
+  //test
   async componentDidMount() {
     try {
       const allItems = await getItems();
