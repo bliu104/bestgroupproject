@@ -158,6 +158,7 @@ const verifyUser = (req, res) => {
   }
 }
 
+
 module.exports = {
   signUp,
   signIn,

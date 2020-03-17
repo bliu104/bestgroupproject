@@ -21,7 +21,7 @@ h5 {
 .dark .item,
 .dark .navbar,
 .dark .form-container,
-.dark .layout footer {
+.dark .layout footer{
   box-shadow: 2px 2px 5px black;
   background-color: #1d1d1d;
   border: none;
@@ -94,7 +94,7 @@ button {
 
 .navbar .nav {
   display: flex;
-  transition: all 0.4s ease;
+  align-self: center;
 }
 
 .form-container {

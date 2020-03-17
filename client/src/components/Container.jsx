@@ -209,8 +209,6 @@ export default class Container extends Component {
     this.setState({
       active: !currentState
     });
-    console.log("working");
-    console.log(this.state.active);
   };
 
   render() {
@@ -279,12 +277,6 @@ export default class Container extends Component {
         </button> */}
         <Header user={user} active={active} menuIconOnClick={menuIconOnClick} />
         <main className="container-not-bootstrap">
-          <div>Electrics</div>
-          <Carousels />
-          <div>Mews</div>
-          <Carousels />
-          <div>Stuff</div>
-          <Carousels />
           <Routes
             items={items}
             user={user}
