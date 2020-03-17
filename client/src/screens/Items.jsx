@@ -89,8 +89,8 @@ export default class Items extends Component {
       handleMode,
       isLight,
       contactUs } = this.props
-    const { items, itemsArr } = this.state
-    if (user || !user) {
+    const { items } = this.state
+
       return (
         <Layout>
           <h4>Items</h4>
@@ -123,19 +123,6 @@ export default class Items extends Component {
         </Layout>
       );
     }
-
-    else {
-      return (
-        <div className="landing">
-          <h2>Welcome to the Items App!</h2>
-          <div className="main">
-            {console.log(items)}
-            {!items ? <h3>No Items at this time.</h3> : null}
-            <div className="item-container">{itemsArr}</div>
-          </div>
-        </div>
-      );
-    }
-  }
+  
 }
 
