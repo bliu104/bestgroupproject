@@ -36,6 +36,18 @@ h5 {
   border: none;
   color: #1d1d1d;
 }
+.dark .links a {
+  color:whitesmoke;
+}
+.arrow-image {
+  padding:20px;
+}
+.dark .arrow-image {
+  background-color:#bb86fc;
+}
+.arrow-image:hover{
+  background-color:whitesmoke;
+}
 
 .sub-item-container,
 .sub-item-container2 {
