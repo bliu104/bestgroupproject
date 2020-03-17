@@ -12,7 +12,7 @@ import ItemEdit from '../screens/ItemEdit'
 import ContactUs from '../components/shared/ContactUs'
 import AuthenticatedRoute from './AuthenticatedRoute'
 import ChangePassword from '../screens/ChangePassword'
-import Subscribe from '../components/shared/Subscribe'
+
 
 const Routes = ({ user,
   items,
@@ -35,44 +35,8 @@ const Routes = ({ user,
   changeColor,
   changeCondition,
   handleMode,
-  isLight  
-  }) => (
-
-  <Switch>
-    <Route
-      exact
-      path="/"
-      render={props => (user ? <Home /> : <Landing {...props} items={items} />)}
-    />
-    <Route
-      path="/sign-in"
-      render={props => <SignIn {...props} setUser={setUser} />}
-    />
-    <Route
-      path="/sign-up"
-      render={props => <SignUp {...props} setUser={setUser} />}
-    />
-    <Route
-      exact
-      path="/sign-out"
-      render={props => <SignOut {...props} clearUser={clearUser} user={user} />}
-    />
-    <Route
-      exact
-      path="/ContactUs"
-      render={props => <ContactUs {...props} />}
-    />
-
-    <Route
-      exact
-      path="/Subscribe"
-      render={props => <Subscribe {...props} />}
-    /> 
-    <AuthenticatedRoute
-      exact
-      path="/items"
-      user={user}
- }) => (
+  isLight,
+  contactUs }) => (
 
     <Switch>
       <Route
@@ -98,11 +62,11 @@ const Routes = ({ user,
         path="/ContactUs"
         render={props => <ContactUs {...props} />}
       />
+
       <AuthenticatedRoute
         exact
         path="/items"
         user={user}
-Developer
         render={props => <Items {...props} user={user} items={items}
           toggleHiddenCondition={toggleHiddenCondition}
           isHiddenCondition={isHiddenCondition}

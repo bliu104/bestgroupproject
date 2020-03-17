@@ -96,11 +96,11 @@ export default class Container extends Component {
   handleSubmit(event) {
     event.preventDefault();
     let input = "";
-    let value = event.target.value 
-    console.log(event.target)
+    let value = event.target.value;
+    console.log(event.target);
     switch (this.state.value) {
       case "AZ":
-        console.log(this.state.items)
+        console.log(this.state.items);
         input = AZ(this.state.items);
         break;
       case "ZA":
@@ -273,11 +273,12 @@ export default class Container extends Component {
         </form>
         <Header user={user} />
         */}
-     
+
         <Header user={user} active={active} menuIconOnClick={menuIconOnClick} />
-        <button onClick={handleMode} id="toggleButton" style ={{margin:15}}>
-          {isLight ? "Dark" : "Light"} Mode </button>
-     
+        <button onClick={handleMode} id="toggleButton" style={{ margin: 15 }}>
+          {isLight ? "Dark" : "Light"} Mode{" "}
+        </button>
+
         <main className="container-not-bootstrap">
           <Routes
             items={items}
