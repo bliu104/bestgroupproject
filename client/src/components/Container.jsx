@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { getItems } from "../services/items";
 import Routes from "../routes";
 import Header from "../screens/Header";
-import Footer from "../components/shared/Footer"
+import Footer from "../components/shared/Footer";
 import { AZ, ZA, lowestFirst, highestFirst } from "./Sort";
-import { verifyToken } from '../services/auth'
+import Carousels from "./Carousels";
+import { verifyToken } from "../services/auth";
 
 import {
   searchByColor,
@@ -16,7 +17,7 @@ import {
 
 import { set } from "mongoose";
 import { Route } from "react-router-dom";
-import Items from '../screens/Items'
+import Items from "../screens/Items";
 
 export default class Container extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ export default class Container extends Component {
       items: [],
       itemsReset: [],
       isLight: true,
-      value: "AZ",
+      value: "",
       isHiddenColor: true,
       isHiddenCondition: true,
       isHiddenPrice: true,
@@ -43,9 +44,8 @@ export default class Container extends Component {
         const items = await getItems();
         this.setState({ items });
         this.setState({ itemsReset: items });
-      }
-      catch (error) {
-        alert("error")
+      } catch (error) {
+        alert("error");
       }
     }
   }
@@ -96,8 +96,11 @@ export default class Container extends Component {
   handleSubmit(event) {
     event.preventDefault();
     let input = "";
+    let value = event.target.value 
+    console.log(event.target)
     switch (this.state.value) {
       case "AZ":
+        console.log(this.state.items)
         input = AZ(this.state.items);
         break;
       case "ZA":
@@ -125,7 +128,7 @@ export default class Container extends Component {
         this.setState({ items: newArray });
         break;
       case "Reset":
-        const items = this.state.itemsReset
+        const items = this.state.itemsReset;
         this.setState({ items });
     }
   };
@@ -138,7 +141,7 @@ export default class Container extends Component {
         this.setState({ items: newArray });
         break;
       case "Reset":
-        const items = this.state.itemsReset
+        const items = this.state.itemsReset;
         this.setState({ items });
     }
   };
@@ -190,7 +193,7 @@ export default class Container extends Component {
     const { items } = this.state;
     return uniqueColor(items).map(color => {
       return <button onClick={this.changeColor}>{color}</button>;
-      console.log('object')
+      console.log("object");
     });
   };
 
@@ -202,13 +205,13 @@ export default class Container extends Component {
   };
 
   menuIconOnClick = () => {
-    const currentState = this.state.active
+    const currentState = this.state.active;
     this.setState({
       active: !currentState
-    })
-    console.log("working")
-    console.log(this.state.active)
-  }
+    });
+    console.log("working");
+    console.log(this.state.active);
+  };
 
   render() {
     const {
@@ -235,10 +238,12 @@ export default class Container extends Component {
       changeColor,
       changeCondition,
       createFilterCondition,
-      menuIconOnClick } = this
+      menuIconOnClick
+    } = this;
 
     return (
       <>
+        {/* <button onClick={this.toggleHiddenFilter}>Filter</button> */}
         {/* <button onClick={this.toggleHiddenFilter}>Filter</button>
         {!this.state.isHiddenFilter && (
           <>
@@ -272,12 +277,14 @@ export default class Container extends Component {
         <button onClick={handleMode} id="toggleButton">
           {isLight ? "Dark" : "Light"} Mode
         </button> */}
-        <Header
-          user={user}
-          active={active}
-          menuIconOnClick={menuIconOnClick}
-        />
+        <Header user={user} active={active} menuIconOnClick={menuIconOnClick} />
         <main className="container-not-bootstrap">
+          <div>Electrics</div>
+          <Carousels />
+          <div>Mews</div>
+          <Carousels />
+          <div>Stuff</div>
+          <Carousels />
           <Routes
             items={items}
             user={user}
