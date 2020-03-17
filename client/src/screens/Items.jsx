@@ -23,7 +23,7 @@ export default class Items extends Component {
       return null;
     }
   };
-
+  //test
   async componentDidMount() {
     try {
       const allItems = await getItems();
