@@ -86,5 +86,6 @@ All code is required to get started
 
 ## Color Pallete used:
 - Base website pallete:
-![color pallete](https://i.imgur.com/XpEzQZtt.png)
+
+![color pallete](https://i.imgur.com/XpEzQZtm.png)
 
