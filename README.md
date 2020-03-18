@@ -2,16 +2,23 @@
 Project name is an online platform focusing on e-commerce. This online market place focus on selling books, electronics, video games and more. Our website allow a user friendly experience for a seller to list there items to sell. Our beautifully design website is very welcoming, allowing navigation to all the corners of our website! We pride our product of its well-design front-end. Backend functionality gives the user the ability to create, change, delete or list all of the items they stored into the the database. With the protection of user-authorization.
 
 ## Prerequisites
-Install instruction:
-- fork
-- git clone https://github.com/bliu104/bestgroupproject.git
-- cd brestgroupproject
-- npm i
-- npm run dev
-- create new tab
-- cd client
-- npm i
--npm start
+All code is required to get started
+
+ ## clone repo using your local machine
+ ```git clone https://github.com/bliu104/bestgroupproject.git```
+ ## Installation instruction:
+ ### Front-end
+ ```cd brestgroupproject
+ npm i
+ npm run dev
+ ```
+ ### Back-end
+ ```
+ command + T
+ cd client
+ npm i
+ npm start
+```
 
 ## Coding Styles
 - Standard Tab or Two spaces
