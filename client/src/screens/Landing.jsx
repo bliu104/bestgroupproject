@@ -1,8 +1,4 @@
-import React from 'react'
-import Carousel from '../components/Carousels'
+import React from "react";
 
-const Landing = (props) => (
-  <div className='container landing'>
-  </div>
-)
-export default Landing
+const Landing = props => <div className="container landing"></div>;
+export default Landing;
