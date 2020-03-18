@@ -1,4 +1,5 @@
-![https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png]
+![ImageOfReact]
+(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png)
 # Project Name
 Project name is an online platform focusing on e-commerce. This online market place focus on selling books, electronics, video games and more. Our website allow a user friendly experience for a seller to list there items to sell. Our beautifully design website is very welcoming, allowing navigation to all the corners of our website! We pride our product of its well-design front-end. Backend functionality gives the user the ability to create, change, delete or list all of the items they stored into the the database. With the protection of user-authorization.
 
