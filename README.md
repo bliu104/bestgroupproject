@@ -46,7 +46,7 @@ All code is required to get started
 ## Items Database 
 - Built with React, MongoDB, and Express.js/Node.js
 
-## Features: 
+## Features
 - CRUD functionality: 
 - Ability to create, delete, edit, and view items utilizing a cloud database 
 - Authentication 
@@ -57,7 +57,7 @@ All code is required to get started
 - Contact us page for feedback or customer support
 - Email communication with page visitors 
 
-## UI Features: 
+## UI Features 
 - Dark/Light Mode - save energy by switching to dark mode
 - Light mode also features a soothing customized color palette 
 - Features a carousel displaying available items by category 
@@ -74,7 +74,7 @@ All code is required to get started
 - use flexbox
 - use grid
 
-## Tools used: 
+## Tools used 
 - React.js 
 - MongoDB/Mongoose 
 - Express.js/Node.js
@@ -84,7 +84,7 @@ All code is required to get started
 - Axios
 - JWT Password Authentication
 
-## Color Pallete used:
+## Color Pallete used
 
 ![color pallete](https://i.imgur.com/XpEzQZtm.png)
 
