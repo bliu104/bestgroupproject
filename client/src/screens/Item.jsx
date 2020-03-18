@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
-import Layout from "../components/shared/Layout";
+import Footer from "../components/shared/Footer";
 import { getItemById, deleteItem } from "../services/items";
 
 class Item extends Component {
@@ -42,7 +42,7 @@ class Item extends Component {
             pathname: "/items",
             state: {
               msg: "Item succesfully deleted!",
-              deletedItem: item 
+              deletedItem: item
             }
           }}
         />
@@ -50,13 +50,13 @@ class Item extends Component {
     }
 
     return (
-      <Layout>
-        <Link to="/items">
-          <span> Back to all items</span>
+      <div className='media-query-item'>
+        <Link to="/items" className='back-to-items-link'>
+          <span className='back-to-items-link'>⬅️ Back to all items</span>
         </Link>
         <div className="item-detail-container">
           <div className="image-container">
-            <div className='center'>
+            <div>
               <img src={item.image_url} className="item-detail-image"></img>
             </div>
           </div>
@@ -97,7 +97,7 @@ class Item extends Component {
             </div>
           </div>
         </div>
-      </Layout>
+      </div>
     );
   }
 }
