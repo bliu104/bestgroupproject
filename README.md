@@ -88,4 +88,5 @@ All code is required to get started
 
 ![color pallete](https://i.imgur.com/XpEzQZtm.png)
 
-
+## Wire Frames and Hierarchy
+In Wire Frame and Hierarchy Folder
