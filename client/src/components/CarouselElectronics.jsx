@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 
-class Carousels extends Component {
+class CarouselElectronics extends Component {
   constructor() {
     super();
     this.state = {
       currentIndex: 0,
       images: [
-        'https://images-na.ssl-images-amazon.com/images/I/71o3VutEycL._SX679_.jpg',
-        'https://i.etsystatic.com/7965790/r/il/7f35c9/1591964160/il_1588xN.1591964160_9eaj.jpg',
-        'https://i.etsystatic.com/7965790/r/il/bb42ee/1590944534/il_1588xN.1590944534_jupi.jpg',
-        'https://i.etsystatic.com/7965790/r/il/f89a44/1590976168/il_1588xN.1590976168_2tua.jpg'
+        'https://images-na.ssl-images-amazon.com/images/I/71bRl4ymGDL._AC_SL1500_.jpg',
+        'https://images-na.ssl-images-amazon.com/images/I/71EEtF2LZdL._AC_SL1500_.jpg',
+        'https://images-na.ssl-images-amazon.com/images/I/71fC3TYXC1L._AC_SL1500_.jpg',
+        'https://images-na.ssl-images-amazon.com/images/I/71wu%2BHMAKBL._SX679_.jpg'
       ]
     };
     this.nextSlide = this.nextSlide.bind(this);
@@ -63,4 +63,4 @@ class Carousels extends Component {
   }
 }
 
-export default Carousels;
+export default CarouselElectronics;
