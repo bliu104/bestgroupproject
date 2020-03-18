@@ -63,7 +63,7 @@ const ItemForm = ({
           onChange={handleChange}
         />
 
-        <button type='submit'>Submit</button>
+        <button type='submit' className='danger'>Submit</button>
         <button className='danger' onClick={() => history.push(cancelPath)}>
           Cancel
 			</button>
