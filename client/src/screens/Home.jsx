@@ -7,11 +7,11 @@ const Home = () => (
   <Layout>
     <div>
       <div className='carousel-divs'>
-      <h2>See what's trending</h2>
+      <h2>See What's Trending</h2>
       <Carousels />
       </div>
       <div className='carousel-divs'>
-      <h2>What's new in electronics</h2>
+      <h2>What's New in Electronics</h2>
       <CarouselElectronics />
       </div>
     </div>
