@@ -146,7 +146,7 @@ export default class Container extends Component {
         */}
 
         <Header user={user} active={active} menuIconOnClick={menuIconOnClick} />
-        <button onClick={handleMode} id="toggleButton" style={{ margin: 15 }}>
+        <button onClick={handleMode} id="toggleButton" style={{ margin: "1.2%" }}>
           {isLight ? "Dark" : "Light"} Mode{" "}
         </button>
 
