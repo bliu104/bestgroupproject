@@ -39,8 +39,8 @@ All code is required to get started
   ```
 
 ## Deployment
-- Front-end deployed on Surge
-- Back-end deployed on Heroku
+- Front-end deployed on Surge (http://buystuffhere.surge.sh/)
+- Back-end deployed on Heroku (https://buystuffhere.herokuapp.com/api)
 - MongoDB database deployed on Cloud Altas
 
 ## Items Database 

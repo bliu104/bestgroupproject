@@ -47,7 +47,7 @@ class SignUp extends Component {
     const toggleForm = this.state.isError ? 'danger' : ''
     if (this.state.isError) {
       return (
-        <button type="submit" className={toggleForm}>
+        <button type="submit" className='danger' className={toggleForm}>
           {this.state.errorMsg}
         </button>
       )

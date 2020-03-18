@@ -4,7 +4,7 @@ import CarouselDiscounts from "../components/CarouselDiscount";
 
 const Landing = props =>
   <div className="landing-container">
-    <h1>Title</h1>
+    <h1>Buy Stuff Here</h1>
     <div className='carousel-divs'>
       <h2>Check Out These Items on Sale</h2>
       <CarouselDiscounts />
