@@ -1,6 +1,6 @@
 ![ImageOfReact](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png)
 # Project Name
-Project name is an online platform focusing on e-commerce. This online market place focuses on selling books, electronics, video games and more. Our website enables a user friendly experience for a seller to list their items to guests or other members. Our beautifull design is very welcoming, allowing navigation to all the corners of our website! Backend functionality gives the user the ability to create, change, delete or list all of the items they stored into the the database. With the protection of user-authorization.
+Project name is a full stack MERN (MongoDB,Express.js,React.js,Node.js) online platform focusing on e-commerce. This online market place focuses on selling books, electronics, video games and more. Our website enables a user friendly experience for a seller to list their items to guests or other members. Our beautifull design is very welcoming, allowing navigation to all the corners of our website! Backend functionality gives the user the ability to create, change, delete or list all of the items they stored into the the database. With the protection of user-authorization.
 
 ## Prerequisites
 All code is required to get started
@@ -44,7 +44,7 @@ All code is required to get started
 - MongoDB database deployed on Cloud Altas
 
 ## Items Database 
-- Built with React, MongoDB, and Express.js/Node.js
+- Full stack MERN application (MongoDB,Express.js,React.js,Node.js)
 
 ## Features
 - CRUD functionality: 
