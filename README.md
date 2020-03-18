@@ -85,7 +85,8 @@ All code is required to get started
 - JWT Password Authentication
 
 ## Color Pallete used:
-- Base website pallete:
 
 ![color pallete](https://i.imgur.com/XpEzQZtm.png)
+
+
 
