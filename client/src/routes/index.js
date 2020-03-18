@@ -62,6 +62,7 @@ const Routes = ({ user,
         path="/ContactUs"
         render={props => <ContactUs {...props} />}
       />
+
       <AuthenticatedRoute
         exact
         path="/items"

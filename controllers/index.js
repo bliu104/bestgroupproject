@@ -149,7 +149,6 @@ const deleteItem = async (req, res) => {
 const verifyUser = (req, res) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
-    console.log(token);
     const user = jwt.verify(token, TOKEN_KEY);
     res.locals = user;
     res.json({ user: res.locals });
