@@ -2,11 +2,10 @@
 import api from './apiConfig'
 
 export const createSubscriber = async subscribe => {
-    try {
+  try {
     const resp = await api.post('/subscribe', subscribe)
-    console.log(resp.data)
     return resp
-} catch (error) {
+  } catch (error) {
     throw error
-}
+  }
 }

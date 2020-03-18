@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Layout from "../components/shared/Layout";
-import Filters from "./Filters";
 import { getItems } from "../services/items";
 
 import { AZ, ZA, lowestFirst, highestFirst } from "../components/Sort";
@@ -26,6 +25,7 @@ export default class Items extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
   }
+
   renderButton = id => {
     const { user, history, match } = this.props;
     if (user) {
@@ -85,7 +85,6 @@ export default class Items extends Component {
 
   handleChangeSearch = event => {
     this.setState({ input: event.target.value });
-    console.log(this.state.input);
   };
   search = (items, input) => {
     let itemsArray = [];
@@ -209,30 +208,6 @@ export default class Items extends Component {
   };
 
   render() {
-    const {
-      user,
-      setUser,
-      clearUser,
-      addItem,
-      toggleHiddenCondition,
-      createFilterCondition,
-      isHiddenCondition,
-      createFilterColor,
-      toggleHiddenColor,
-      toggleHiddenPrice,
-      createFilterPrice,
-      toggleHiddenFilter,
-      handleSubmit,
-      handleChange,
-      isHiddenColor,
-      value,
-      isHiddenPrice,
-      changeColor,
-      changeCondition,
-      handleMode,
-      isLight,
-      contactUs
-    } = this.props;
     const { items } = this.state;
 
     return (
