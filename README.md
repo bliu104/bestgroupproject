@@ -88,7 +88,4 @@ All code is required to get started
 
 ![color pallete](https://i.imgur.com/XpEzQZtm.png)
 
-## Component hierarchy
-
-![component hierarchy]()
 
