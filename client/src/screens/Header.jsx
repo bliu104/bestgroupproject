@@ -7,7 +7,7 @@ import ChangePassword from '../screens/ChangePassword'
 
 const authenticatedOptions = (
   <div className="links">
-    <NavLink to="/">Home</NavLink>
+    <NavLink className='link-div' to="/">Home</NavLink>
     <NavLink className='link-div' to='/items'>Items</NavLink>
     <NavLink className='link-div' to='/create'>Create Item</NavLink>
     <NavLink className='link-div' to="/change-password">Change Password</NavLink>
@@ -17,31 +17,26 @@ const authenticatedOptions = (
 
 const unauthenticatedOptions = (
   <div className="links" >
-    <NavLink to="/sign-up">Sign Up</NavLink>
-    <NavLink to="/sign-in">Sign In</NavLink>
+    <NavLink className='singInUp' to="/sign-up">Sign Up</NavLink>
+    <NavLink className='singInUp' to="/sign-in">Sign In</NavLink>
   </div>
 )
 
-// const alwaysOptions = (
-//   <div className="links">
-//     <NavLink to="/">Home</NavLink>
-//   </div>
-// )
 
 const Header = ({ user, menuIconOnClick, active }) => (
   <>
-    <Navbar>
+    <Navbar id='navbar'>
       {user && <span className="navbar-text">Welcome, {user.username} </span>}
       <div className="nav">
-        {/* {alwaysOptions} */}
-        <div>
-          {user ? null : unauthenticatedOptions}
-        </div>
-        <div className='hamburger-container' onClick={(e) => menuIconOnClick(e)}>
-          <div className='bar1'></div>
-          <div className='bar2'></div>
-          <div className='bar3'></div>
-        </div>
+        <>
+          {user ?
+            <div className='hamburger-container' id='right-margin' onClick={(e) => menuIconOnClick(e)}>
+              <div className='bar1'></div>
+              <div className='bar2'></div>
+              <div className='bar3'></div>
+            </div>
+            : unauthenticatedOptions}
+        </>
       </div>
     </Navbar>
     <div className='link-div'>

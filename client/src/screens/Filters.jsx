@@ -18,7 +18,7 @@ export default function Filters(props) {
     createFilterCondition,
     isHiddenPrice,
     handleMode,
-    isLight} = props
+    isLight } = props
 
   return (
     <div className=''>
@@ -32,7 +32,7 @@ export default function Filters(props) {
             <>
               <button onClick={(e) => toggleHiddenColor(e)}>Color</button>
               {!isHiddenColor && createFilterColor()}
-              <button onClick={(e) => toggleHiddenCondition(e)}>Condition</button> 
+              <button onClick={(e) => toggleHiddenCondition(e)}>Condition</button>
               {!isHiddenCondition && createFilterCondition()}
               <button onClick={(e) => toggleHiddenPrice(e)}>Price</button>
               {!isHiddenPrice && createFilterPrice()}

@@ -4,6 +4,10 @@ import App from './App'
 import './styles/App.css'
 import './styles/MenuIcon.css'
 import './styles/MediaQueries.css'
+import './styles/Carousel.css'
+import './styles/Filters.css'
+import './styles/Landing.css'
+import './styles/Footer.css'
 import * as serviceWorker from './serviceWorker'
 import { BrowserRouter as Router } from 'react-router-dom'
 
@@ -14,7 +18,4 @@ ReactDOM.render(
 	document.getElementById('root')
 )
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister()

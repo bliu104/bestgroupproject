@@ -1,0 +1,82 @@
+.carousel-container{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin: 3% 0;
+width: 100%;
+}
+
+.track{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.carousel-image-container0, 
+.carousel-image-container1, 
+.carousel-image-container2, 
+.carousel-image-container3{
+margin: 1%;
+}
+
+.carousel0, .carousel1, .carousel2, .carousel3{
+  width: 20vw;
+  height: 35vh;
+  overflow: hidden;
+  object-fit: cover;
+  padding: 3%;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgb(255, 255, 255);
+  border-radius: 5%;
+}
+
+.arrow-image{
+  width: 5vw;
+  margin: auto 0;
+  cursor: pointer;
+}
+
+.arrow-container{
+  align-self: center
+}
+
+.carousel-divs{
+  background-color: #f1f9f9;
+  margin: 5% auto;
+  border: 1px solid #e0e0e0;
+  width: 96%;
+}
+
+h2{
+  margin: 2% 1%;
+}
+
+.dark .carousel-divs{
+  background-color: #1d1d1d;
+}
+
+.dark input,
+.dark .bar1,
+.dark .bar2,
+.dark .bar3 {
+  background-color: #ffffff;
+}
+
+.dark .carousel0,
+.dark .carousel1,
+.dark .carousel2,
+.dark .carousel3{
+  background-color: #000000;
+}
+
+.dark .arrow-image {
+  background-color:#bb86fc;
+}
+
+.arrow-image:hover{
+  background-color:whitesmoke;
+}
+
+.arrow-image {
+  padding:20px;
+}

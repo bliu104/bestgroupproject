@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Nav from './Nav'
 import Footer from './Footer'
 
@@ -8,7 +7,6 @@ const Layout = (props) => (
     <div className='content'>
       <Nav />
       <div className='main'>
-        <h1>Items App</h1>
         {props.children}
       </div>
     </div>
