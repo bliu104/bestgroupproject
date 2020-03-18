@@ -1,6 +1,6 @@
 ![ImageOfReact](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png)
 # Project Name
-Project name is an online platform focusing on e-commerce. This online market place focus on selling books, electronics, video games and more. Our website allow a user friendly experience for a seller to list there items to sell. Our beautifully design website is very welcoming, allowing navigation to all the corners of our website! We pride our product of its well-design front-end. Backend functionality gives the user the ability to create, change, delete or list all of the items they stored into the the database. With the protection of user-authorization.
+Project name is an online platform focusing on e-commerce. This online market place focuses on selling books, electronics, video games and more. Our website enables a user friendly experience for a seller to list their items to guests or other members. Our beautifull design is very welcoming, allowing navigation to all the corners of our website! Backend functionality gives the user the ability to create, change, delete or list all of the items they stored into the the database. With the protection of user-authorization.
 
 ## Prerequisites
 All code is required to get started
@@ -47,14 +47,15 @@ All code is required to get started
 - Built with React, MongoDB, and Express.js/Node.js
 
 ## Features: 
-
 - CRUD functionality: 
-  - Ability to create, delete, edit, and view items utilizing a cloud database 
+- Ability to create, delete, edit, and view items utilizing a cloud database 
 - Authentication 
-  - User must be signed in or sign up to view,edit,delete,create items 
+- User must be signed in or sign up to view, edit, delete, and create items 
 - Search bar to search through items 
-- Filter by color, price, condition
-- Sort items alphabetically or by price 
+- Filter by color, price, and condition
+- Sort items alphabetically or by price
+- Contact us page for feedback or customer support
+- Email communication with page visitors 
 
 ## UI Features: 
 - Dark/Light Mode - save energy by switching to dark mode
@@ -64,8 +65,10 @@ All code is required to get started
 - Filter and sort for better user experience
 
 ## Responsiveness
-- Mobile devices with 420px
+- Multiple breakouts to accommodate different devices
 - Desktop
+- Tablet
+- Mobile
 
 ## Design
 - use flexbox
@@ -77,5 +80,11 @@ All code is required to get started
 - Express.js/Node.js
 - Heroku 
 - Surge 
+- React Bootstrap
+- Axios
 - JWT Password Authentication
+
+## Color Pallete used:
+- Base website pallete:
+![color pallete](https://i.imgur.com/XpEzQZtt.png)
 
