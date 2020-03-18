@@ -235,7 +235,7 @@ export default class Items extends Component {
                 onChange={this.handleChangeSearch}
               />
             </form>
-            <button onClick={this.reset} className='resize'>reset</button>
+            <button onClick={this.reset}>reset</button>
           </div>
           <div>
             <label htmlFor="sort">Sort: </label>
