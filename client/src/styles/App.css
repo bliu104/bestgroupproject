@@ -6,6 +6,7 @@ body {
   font-family: "Montserrat";
   height: 100%;
 }
+
 h5 {
   font-size: 1em;
 }
@@ -13,9 +14,14 @@ h5 {
 .light {
   background-color: rgb(255, 255, 255);
 }
+
 .dark {
   background-color: #262626;
   color: #e0e0e0;
+}
+
+.dark .bold{
+  color: #BB86FC;
 }
 
 .dark .item,
@@ -26,16 +32,34 @@ h5 {
   background-color: #1d1d1d;
   border: none;
 }
-.dark input {
-  background-color: #e1e1e1;
+
+.dark input,
+.dark .bar1,
+.dark .bar2,
+.dark .bar3 {
+  background-color: #ffffff;
+}
+
+.dark .carousel0,
+.dark .carousel1,
+.dark .carousel2,
+.dark .carousel3{
+  background-color: #BB86FC;
 }
 
 .dark .item-container .item button,
-.dark .danger {
+.dark .danger,
+.dark .edit {
   background-color: #bb86fc;
   border: none;
   color: #1d1d1d;
 }
+
+.dark .navbar-text,
+.dark .navbar .nav .links a, .navbar span{
+  color: rgb(255, 255, 255);
+}
+
 .links a:nth-last-child(1){
   border-bottom:2px solid whitesmoke;
   padding-bottom:2%;
@@ -43,11 +67,13 @@ h5 {
 .dark .links a:nth-last-child(1){
   border-bottom:2px solid #9e9e9e;
 }
+
 .links a {
   margin:0;
   color:black;
   padding:10px;
 }
+
 .links a:hover {
   font-weight:bold;
   color:#333;
@@ -56,12 +82,15 @@ h5 {
 .dark .links a {
   color:whitesmoke;
 }
+
 .arrow-image {
   padding:20px;
 }
+
 .dark .arrow-image {
   background-color:#bb86fc;
 }
+
 .arrow-image:hover{
   background-color:whitesmoke;
 }
@@ -190,7 +219,7 @@ button {
 .form-container form button {
   width: 50%;
   margin: 1em auto;
-  background: #b2dfdb;
+  background: #f3dfe3;
   border: none;
 }
 
@@ -262,10 +291,16 @@ button {
   margin: auto;
 }
 
+.back-to-items-link{
+  margin: 0 1.5%;
+}
+
 .item-detail-container {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 60vh;
+  margin: 4% 0;
 }
 
 .image-container {
@@ -274,20 +309,24 @@ button {
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .item-detail-image {
-  width: auto;
-  height: 40vh;
-  margin: 5% 0;
-}
-
-.center {
-  width: 100%;
+  width: 40vh;
+  height: auto;
+  margin: 5%;
 }
 
 .bold {
   font-weight: 800;
+}
+
+.item-property-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: tomato;
 }
 
 .item {
@@ -345,7 +384,7 @@ button {
 }
 
 .item-container .item button {
-  background: #8b8b8b;
+  background: #e9b2bc;
   color: #f8f8f8;
 }
 
@@ -362,7 +401,7 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 3%;
+  margin: 5% 0;
 }
 
 .buttons-container,
@@ -385,20 +424,21 @@ button {
 }
 
 .edit {
-  background: #b2dfdb;
+  background: #f3dfe3;
   margin: 0 0.5vw;
   border: none;
 }
 
 .edit:hover {
-  background: #82ada9;
+  background: #56c8d8;
   color: white;
   border: none;
 }
 
 .danger:hover {
   color: #f8f8f8;
-  background: #af4448;
+  background: #56c8d8;
+
 }
 
 .alert {

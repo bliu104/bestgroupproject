@@ -46,3 +46,12 @@ margin: 1%;
   border: 1px solid #e0e0e0;
   width: 96%;
 }
+
+h2{
+  margin: 2% 1%;
+}
+
+.dark .carousel-divs{
+  background-color: #1d1d1d;
+
+}

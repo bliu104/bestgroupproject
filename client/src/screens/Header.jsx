@@ -17,8 +17,8 @@ const authenticatedOptions = (
 
 const unauthenticatedOptions = (
   <div className="links" >
-    <NavLink to="/sign-up">Sign Up</NavLink>
-    <NavLink to="/sign-in">Sign In</NavLink>
+    <NavLink className='singInUp' to="/sign-up">Sign Up</NavLink>
+    <NavLink className='singInUp' to="/sign-in">Sign In</NavLink>
   </div>
 )
 

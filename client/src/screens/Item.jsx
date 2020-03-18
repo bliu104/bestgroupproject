@@ -52,11 +52,11 @@ class Item extends Component {
     return (
       <Layout>
         <Link to="/items">
-          <span> Back to all items</span>
+          <span className='back-to-items-link'>⬅️ Back to all items</span>
         </Link>
         <div className="item-detail-container">
           <div className="image-container">
-            <div className='center'>
+            <div>
               <img src={item.image_url} className="item-detail-image"></img>
             </div>
           </div>
