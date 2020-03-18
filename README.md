@@ -4,10 +4,40 @@ Project name is an online platform focusing on e-commerce. This online market pl
 ## Prerequisites
 Install instruction:
 - fork
-- clone
-- cd 
+- git clone https://github.com/bliu104/bestgroupproject.git
+- cd brestgroupproject
+- npm i
+- npm run dev
+- create new tab
+- cd client
+- npm i
+-npm start
+
+## Coding Styles
+- Standard Tab or Two spaces
+- Indention one Tab
+- Blank can be added for readability
+- camelCase for function, variables for javascript code
+- First Letter Capitalize in Components.jsx
+- Commented out breaks are allowed for readability
+- Case switch statements must be proper Indented
+
+```createFilterColor = () => {
+    const { items } = this.state;
+    return uniqueColor(items).map(color => {
+      return <button onClick={this.changeColor}>{color}</button>;
+    });
+  };
+  ```
+
+## Deployment
+- Front-end deployed on Surge
+- Back-end deployed on Heroku
+- MongoDB database deployed on Cloud Altas
+
 ## Items Database 
 - Built with React, MongoDB, and Express.js/Node.js
+
 ## Features: 
 
 - CRUD functionality: 
@@ -22,9 +52,16 @@ Install instruction:
 - Dark/Light Mode - save energy by switching to dark mode
 - Light mode also features a soothing customized color palette 
 - Features a carousel displaying available items by category 
+- Search Bar inorder to shorten item list
+- Filter and sort for better user experience
 
-## Backend Features: 
-- Deployed to cloud database using Mongo Atlas 
+## Responsiveness
+- Mobile devices with 420px
+- Desktop
+
+## Design
+- use flexbox
+- use grid
 
 ## Tools used: 
 - React.js 
