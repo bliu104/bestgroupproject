@@ -5,7 +5,7 @@ Project name is an online platform focusing on e-commerce. This online market pl
 ## Prerequisites
 All code is required to get started
 
- ## clone repo using your local machine
+ clone repo using your local machine
  ```git clone https://github.com/bliu104/bestgroupproject.git```
  ## Installation instruction:
  ### Front-end
