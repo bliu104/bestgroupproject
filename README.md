@@ -7,7 +7,7 @@ All code is required to get started
 
  clone repo using your local machine
  ```git clone https://github.com/bliu104/bestgroupproject.git```
- ## Installation instruction:
+ ## Installation instructions
  ### Front-end
  ```cd brestgroupproject
  npm i
@@ -88,5 +88,7 @@ All code is required to get started
 
 ![color pallete](https://i.imgur.com/XpEzQZtm.png)
 
+## Component hierarchy
 
+![component hierarchy]()
 
