@@ -22,19 +22,21 @@ const unauthenticatedOptions = (
   </div>
 )
 
+
 const Header = ({ user, menuIconOnClick, active }) => (
   <>
-    <Navbar>
+    <Navbar id='navbar'>
       {user && <span className="navbar-text">Welcome, {user.username} </span>}
       <div className="nav">
         <>
-          {user ? null : unauthenticatedOptions}
+          {user ?
+            <div className='hamburger-container' id='right-margin' onClick={(e) => menuIconOnClick(e)}>
+              <div className='bar1'></div>
+              <div className='bar2'></div>
+              <div className='bar3'></div>
+            </div>
+            : unauthenticatedOptions}
         </>
-        <div className='hamburger-container' id='right-margin' onClick={(e) => menuIconOnClick(e)}>
-          <div className='bar1'></div>
-          <div className='bar2'></div>
-          <div className='bar3'></div>
-        </div>
       </div>
     </Navbar>
     <div className='link-div'>

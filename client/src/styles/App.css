@@ -133,7 +133,6 @@ button {
 .nav {
   display: flex;
   align-self: center;
-  width: 100%;
   justify-content: space-between;
 }
 
@@ -246,6 +245,11 @@ button {
 
 .layout .content nav a:last-of-type {
   border-bottom: 2px solid #333;
+}
+
+#navbar{
+  display: flex;
+  flex-direction: row;
 }
 
 .layout footer {
