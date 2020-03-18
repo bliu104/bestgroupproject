@@ -19,21 +19,6 @@ const Routes = ({ user,
   setUser,
   clearUser,
   addItem,
-  toggleHiddenCondition,
-  createFilterCondition,
-  isHiddenCondition,
-  createFilterColor,
-  toggleHiddenColor,
-  toggleHiddenPrice,
-  createFilterPrice,
-  toggleHiddenFilter,
-  handleSubmit,
-  handleChange,
-  isHiddenColor,
-  value,
-  isHiddenPrice,
-  changeColor,
-  changeCondition,
   handleMode,
   isLight,
   contactUs }) => (
@@ -67,23 +52,9 @@ const Routes = ({ user,
         exact
         path="/items"
         user={user}
-        render={props => <Items {...props} user={user} items={items}
-          toggleHiddenCondition={toggleHiddenCondition}
-          isHiddenCondition={isHiddenCondition}
-          createFilterCondition={createFilterCondition}
-          createFilterColor={createFilterColor}
-          toggleHiddenColor={toggleHiddenColor}
-          toggleHiddenColor={toggleHiddenColor}
-          toggleHiddenPrice={toggleHiddenPrice}
-          createFilterPrice={createFilterPrice}
-          toggleHiddenFilter={toggleHiddenFilter}
-          handleSubmit={handleSubmit}
-          handleChange={handleChange}
-          isHiddenColor={isHiddenColor}
-          value={value}
-          isHiddenPrice={isHiddenPrice}
-          changeColor={changeColor}
-          changeCondition={changeCondition}
+        render={props => <Items {...props}
+          user={user}
+          items={items}
           handleMode={handleMode}
           isLight={isLight} />}
       />

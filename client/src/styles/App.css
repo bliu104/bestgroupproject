@@ -33,20 +33,6 @@ h5 {
   border: none;
 }
 
-.dark input,
-.dark .bar1,
-.dark .bar2,
-.dark .bar3 {
-  background-color: #ffffff;
-}
-
-.dark .carousel0,
-.dark .carousel1,
-.dark .carousel2,
-.dark .carousel3{
-  background-color: #BB86FC;
-}
-
 .dark .item-container .item button,
 .dark .danger,
 .dark .edit {
@@ -83,18 +69,6 @@ h5 {
   color:whitesmoke;
 }
 
-.arrow-image {
-  padding:20px;
-}
-
-.dark .arrow-image {
-  background-color:#bb86fc;
-}
-
-.arrow-image:hover{
-  background-color:whitesmoke;
-}
-
 .sub-item-container,
 .sub-item-container2 {
   display: flex;
@@ -117,7 +91,6 @@ h5 {
 #toggleButton {
   border: 2px solid #616161;
 }
-
 
 button {
   cursor: pointer;
@@ -394,7 +367,8 @@ button {
 }
 
 .danger {
-  background: #f3dfe3;
+  background: #e9b2bc;
+  color: #ffffff;
 }
 
 .button-container {
@@ -424,9 +398,10 @@ button {
 }
 
 .edit {
-  background: #f3dfe3;
+  background: #e9b2bc;
   margin: 0 0.5vw;
   border: none;
+  color: #ffffff;
 }
 
 .edit:hover {

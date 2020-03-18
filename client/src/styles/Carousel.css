@@ -53,5 +53,30 @@ h2{
 
 .dark .carousel-divs{
   background-color: #1d1d1d;
+}
 
+.dark input,
+.dark .bar1,
+.dark .bar2,
+.dark .bar3 {
+  background-color: #ffffff;
+}
+
+.dark .carousel0,
+.dark .carousel1,
+.dark .carousel2,
+.dark .carousel3{
+  background-color: #000000;
+}
+
+.dark .arrow-image {
+  background-color:#bb86fc;
+}
+
+.arrow-image:hover{
+  background-color:whitesmoke;
+}
+
+.arrow-image {
+  padding:20px;
 }

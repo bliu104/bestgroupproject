@@ -20,10 +20,8 @@ export default class Container extends Component {
       itemsReset: [],
       isLight: true,
       value: "",
-
       active: false
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   async componentDidMount() {
@@ -60,29 +58,6 @@ export default class Container extends Component {
     }
   };
 
-  handleSubmit(event) {
-    event.preventDefault();
-    let input = "";
-    let value = event.target.value;
-    console.log(event.target);
-    switch (this.state.value) {
-      case "AZ":
-        console.log(this.state.items);
-        input = AZ(this.state.items);
-        break;
-      case "ZA":
-        input = ZA(this.state.items);
-        break;
-      case "lowestFirst":
-        input = lowestFirst(this.state.items);
-        break;
-      case "highestFirst":
-        input = highestFirst(this.state.items);
-        break;
-    }
-    this.setState({ value: input });
-  }
-
   handleChange = event => {
     this.setState({ value: event.target.value });
   };
@@ -95,58 +70,18 @@ export default class Container extends Component {
   };
 
   render() {
-    const {
-      user,
-      items,
-      isLight,
-      isHiddenColor,
-      isHiddenCondition,
-      value,
-      isHiddenPrice,
-      active
-    } = this.state;
+    const { user, items, isLight, active } = this.state;
 
-    const {
-      handleMode,
-      toggleHiddenColor,
-      createFilterColor,
-      toggleHiddenCondition,
-      createFilterPrice,
-      toggleHiddenFilter,
-      handleSubmit,
-      handleChange,
-      toggleHiddenPrice,
-      changeColor,
-      changeCondition,
-      createFilterCondition,
-      menuIconOnClick
-    } = this;
+    const { handleMode, menuIconOnClick } = this;
 
     return (
       <>
-        {/* <button onClick={this.changeColor}>Reset</button> */}
-        {/* <form onSubmit={this.handleSubmit}>
-        </form> */}
-        {/* <button onClick={handleMode} id="toggleButton">
-        )}
-        <button onClick={this.changeColor}>Reset</button>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Sort
-            <select value={this.state.value} onChange={this.handleChange}>
-              <option value="AZ">A to Z</option>
-              <option value="ZA">Z to A</option>
-              <option value="highestFirst">High to Lowest</option>
-              <option value="lowestFirst">Lowest to Highest</option>
-            </select>
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-        <Header user={user} />
-        */}
-
         <Header user={user} active={active} menuIconOnClick={menuIconOnClick} />
-        <button onClick={handleMode} id="toggleButton" style={{ margin: "1.2%" }}>
+        <button
+          onClick={handleMode}
+          id="toggleButton"
+          style={{ margin: "1.2%" }}
+        >
           {isLight ? "Dark" : "Light"} Mode{" "}
         </button>
 
@@ -157,21 +92,6 @@ export default class Container extends Component {
             setUser={this.setUser}
             addItem={this.addItem}
             clearUser={this.clearUser}
-            toggleHiddenCondition={toggleHiddenCondition}
-            isHiddenCondition={isHiddenCondition}
-            createFilterCondition={createFilterCondition}
-            createFilterColor={createFilterColor}
-            toggleHiddenColor={toggleHiddenColor}
-            toggleHiddenPrice={toggleHiddenPrice}
-            createFilterPrice={createFilterPrice}
-            toggleHiddenFilter={toggleHiddenFilter}
-            handleSubmit={handleSubmit}
-            handleChange={handleChange}
-            isHiddenColor={isHiddenColor}
-            value={value}
-            isHiddenPrice={isHiddenPrice}
-            changeColor={changeColor}
-            changeCondition={changeCondition}
             handleMode={handleMode}
             isLight={isLight}
           />

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Layout from "../components/shared/Layout";
-import Filters from "./Filters";
 import { getItems } from "../services/items";
 
 import { AZ, ZA, lowestFirst, highestFirst } from "../components/Sort";
@@ -26,6 +25,7 @@ export default class Items extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
   }
+
   renderButton = id => {
     const { user, history, match } = this.props;
     if (user) {
@@ -85,7 +85,6 @@ export default class Items extends Component {
 
   handleChangeSearch = event => {
     this.setState({ input: event.target.value });
-    console.log(this.state.input);
   };
   search = (items, input) => {
     let itemsArray = [];
@@ -128,7 +127,7 @@ export default class Items extends Component {
       return <button onClick={this.changeColor}>{color}</button>;
     });
   };
-  //--------------------------COnditon-----------------
+  //--------------------------Conditon-----------------
   toggleHiddenCondition = () => {
     this.setState({
       isHiddenCondition: !this.state.isHiddenCondition
@@ -209,70 +208,46 @@ export default class Items extends Component {
   };
 
   render() {
-    const {
-      user,
-      setUser,
-      clearUser,
-      addItem,
-      toggleHiddenCondition,
-      createFilterCondition,
-      isHiddenCondition,
-      createFilterColor,
-      toggleHiddenColor,
-      toggleHiddenPrice,
-      createFilterPrice,
-      toggleHiddenFilter,
-      handleSubmit,
-      handleChange,
-      isHiddenColor,
-      value,
-      isHiddenPrice,
-      changeColor,
-      changeCondition,
-      handleMode,
-      isLight,
-      contactUs
-    } = this.props;
     const { items } = this.state;
 
     return (
       <Layout>
-        <h4>Items</h4>
-        <div>
-          Search Bar
-          <form onSubmit={this.handleSubmitSearch}>
-            <input
-              type="text"
-              value={this.state.input}
-              onChange={this.handleChangeSearch}
-            />
-          </form>
-          <button onClick={this.reset}>reset</button>
+        <div className='filter-container'>
+          <button onClick={this.toggleHiddenFilter}>Filter</button>
+          {!this.state.isHiddenFilter && (
+            <>
+              <button onClick={this.toggleHiddenColor}>Color</button>
+              {!this.state.isHiddenColor && this.createFilterColor()}
+              <button onClick={this.toggleHiddenCondition}>Condition</button>
+              {!this.state.isHiddenCondition && this.createFilterCondition()}
+              <button onClick={this.toggleHiddenPrice}>Price</button>
+              {!this.state.isHiddenPrice && this.createFilterPrice()}
+            </>
+          )}
         </div>
+        <div className='search-sort-container'>
+          <div className='searchbar-container'>
+            Search Bar:
+            <form onSubmit={this.handleSubmitSearch}>
+              <input
+                type="text"
+                value={this.state.input}
+                onChange={this.handleChangeSearch}
+              />
+            </form>
+            <button onClick={this.reset} className='resize'>reset</button>
+          </div>
+          <div>
+            <label htmlFor="sort">Sort: </label>
+            <select id="sort" onChange={this.handleChange}>
+              <option value="AZ">A-Z</option>
+              <option value="ZA">Z-A</option>
+              <option value="highestFirst">Price High to Low</option>
+              <option value="lowestFirst">Price Low to High</option>
+            </select>
+          </div>
 
-        <button onClick={this.toggleHiddenFilter}>Filter</button>
-
-        {!this.state.isHiddenFilter && (
-          <>
-            <button onClick={this.toggleHiddenColor}>Color</button>
-            {!this.state.isHiddenColor && this.createFilterColor()}
-
-            <button onClick={this.toggleHiddenCondition}>Condition</button>
-            {!this.state.isHiddenCondition && this.createFilterCondition()}
-
-            <button onClick={this.toggleHiddenPrice}>Price</button>
-            {!this.state.isHiddenPrice && this.createFilterPrice()}
-          </>
-        )}
-
-        <label htmlFor="sort">Sort:</label>
-
-        <select id="sort" onChange={this.handleChange}>
-          <option value="AZ">A-Z</option>
-          <option value="ZA">Z-A</option>
-          <option value="highestFirst">Price High to Low</option>
-          <option value="lowestFirst">Price Low to High</option>
-        </select>
+        </div>
         <div className="item-container">
           {items ? (
             items.map(item => {
@@ -289,8 +264,8 @@ export default class Items extends Component {
               );
             })
           ) : (
-            <h3>No Items at this time. </h3>
-          )}
+              <h3>No Items at this time. </h3>
+            )}
         </div>
       </Layout>
     );

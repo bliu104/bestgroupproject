@@ -1,0 +1,27 @@
+.filter-container{
+  display: flex;
+  flex-direction: row;
+  margin: 1% 2%;
+}
+
+.search-sort-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1%;
+  padding: 1%;
+  align-items: baseline;
+}
+
+.searchbar-container{
+  display: flex;  
+  flex-direction: row;
+  justify-content: space-between;
+  width: 27%;
+  align-items: flex-end;
+}
+
+.resize{
+  width: 5vw;
+  height: 4vh;
+}

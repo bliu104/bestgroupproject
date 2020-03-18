@@ -1,1 +1,81 @@
-# p3
+![ImageOfReact](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png)
+# Project Name
+Project name is an online platform focusing on e-commerce. This online market place focus on selling books, electronics, video games and more. Our website allow a user friendly experience for a seller to list there items to sell. Our beautifully design website is very welcoming, allowing navigation to all the corners of our website! We pride our product of its well-design front-end. Backend functionality gives the user the ability to create, change, delete or list all of the items they stored into the the database. With the protection of user-authorization.
+
+## Prerequisites
+All code is required to get started
+
+ clone repo using your local machine
+ ```git clone https://github.com/bliu104/bestgroupproject.git```
+ ## Installation instruction:
+ ### Front-end
+ ```cd brestgroupproject
+ npm i
+ npm run dev
+ ```
+ ### Back-end
+ ```
+ command + T
+ cd client
+ npm i
+ npm start
+```
+
+## Coding Styles
+- Standard Tab or Two spaces
+- Indention one Tab
+- Blank can be added for readability
+- camelCase for function, variables for javascript code
+- First Letter Capitalize in Components.jsx
+- Commented out breaks are allowed for readability
+- Case switch statements must be proper Indented
+
+```createFilterColor = () => {
+    const { items } = this.state;
+    return uniqueColor(items).map(color => {
+      return <button onClick={this.changeColor}>{color}</button>;
+    });
+  };
+  ```
+
+## Deployment
+- Front-end deployed on Surge
+- Back-end deployed on Heroku
+- MongoDB database deployed on Cloud Altas
+
+## Items Database 
+- Built with React, MongoDB, and Express.js/Node.js
+
+## Features: 
+
+- CRUD functionality: 
+  - Ability to create, delete, edit, and view items utilizing a cloud database 
+- Authentication 
+  - User must be signed in or sign up to view,edit,delete,create items 
+- Search bar to search through items 
+- Filter by color, price, condition
+- Sort items alphabetically or by price 
+
+## UI Features: 
+- Dark/Light Mode - save energy by switching to dark mode
+- Light mode also features a soothing customized color palette 
+- Features a carousel displaying available items by category 
+- Search Bar inorder to shorten item list
+- Filter and sort for better user experience
+
+## Responsiveness
+- Mobile devices with 420px
+- Desktop
+
+## Design
+- use flexbox
+- use grid
+
+## Tools used: 
+- React.js 
+- MongoDB/Mongoose 
+- Express.js/Node.js
+- Heroku 
+- Surge 
+- JWT Password Authentication
+
