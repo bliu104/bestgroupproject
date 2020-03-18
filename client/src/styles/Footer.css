@@ -1,0 +1,9 @@
+#footer-style{
+  background-color: #E1F2FB;
+}
+
+.dark #footer-style{
+  background-color: #1d1d1d;
+  color: #ffffff;
+  
+}

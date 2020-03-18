@@ -95,7 +95,6 @@ export default class Container extends Component {
             handleMode={handleMode}
             isLight={isLight}
           />
-          <Footer />
         </main>
       </>
     );
