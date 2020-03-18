@@ -1,7 +1,7 @@
 # Items Database 
-
-## Features: 
 - Built with React, MongoDB, and Express.js/Node.js
+## Features: 
+
 - CRUD functionality: 
   - Ability to create, delete, edit, and view items 
 - Authentication 
@@ -11,6 +11,7 @@
 - Sort items alphabetically or by price 
 
 ## UI Features: 
-- Dark/Light Mode - save energy by switching to dark mode. Light mode also features a soothing customized color palette 
+- Dark/Light Mode - save energy by switching to dark mode
+- Light mode also features a soothing customized color palette 
 - Features a carousel displaying available items by category 
 
